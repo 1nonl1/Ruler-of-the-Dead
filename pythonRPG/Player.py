@@ -17,6 +17,7 @@ class Player:
         self.exp = 0
         self.gold = 0
         self.alive = True
+        self.hunger = 0
         self.inv = Inventory()
         self.equipWeapon = None
         self.equipArmor = {
@@ -102,7 +103,8 @@ class Player:
                 self.alive = False
                 break
             else:
-                choice = input("Do you want to attack, use an item, or run? ")
+                choice = input("Do you want to...\n\t1. Attack\n\t2. Use an item\n\t3. Use skill\n\t4. run\n> ").lower()
+                #Incorporate skills, items, and critical hits
                 if choice == "attack":
                     damage = max(0, self.attack - (enemy.armor - self.armorPen))
                     print(f"You attack the {enemy.name} for {damage} damage!")
@@ -119,8 +121,10 @@ class Player:
                         print(f"The {enemy.name} attacks you for {enemy_damage} damage!")
                         self.health -= enemy_damage
                         print(f"Your health: {self.health}")
-                elif choice == "use_item":
+                elif "item" in choice:
                     print("You use an item (not implemented yet).")
+                elif "skill" in choice:
+                    print("You use a skill (not implemented yet).")
                 elif choice == "run":
                     print("You run away!")
                     del enemy
