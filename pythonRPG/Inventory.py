@@ -1,5 +1,9 @@
+import Player
+import Armory
+
 class Inventory:
-    items = []  # List to store all items
+    def __init__(self):
+        self.items = []  # Instance attribute to store all items
 
     def addItem(self, item):
         self.items.append(item)
@@ -16,10 +20,15 @@ class Inventory:
         if not self.items:
             print("Your inventory is empty.")
         else:
-            i = 1
             print("Your inventory contains:")
-            for item in self.items:
+            for i, item in enumerate(self.items, start=1):
                 print(f"{i}. {item.name}, Rarity: {item.rarity}, Durability: {item.durability}")
-                i += 1
-inv = Inventory.Inventory()
-print(inv.items)
+
+    def checkInvFull(self):
+        if len(self.items) > Player.invCapacity:
+            excess_items = len(self.items) - Player.invCapacity
+            print(f"Your inventory is full! You need to get rid of {excess_items} items.")
+            for _ in range(excess_items):
+                self.showInventory()
+                choice = input("Enter the name of the item to remove: ")
+                self.removeItem(choice)

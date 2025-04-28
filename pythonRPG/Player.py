@@ -18,6 +18,7 @@ class Player:
         self.gold = 0
         self.alive = True
         self.hunger = 0
+        self.invCapacity = 30
         self.inv = Inventory()
         self.equipWeapon = None
         self.equipArmor = {

@@ -1,9 +1,38 @@
+import random
 class BaseSkill:
     def __init__(self, name, type, description, coolDown):
         self.name = name
         self.type = type
         self.description = description
         self.coolDown = coolDown
+    @classmethod
+    def createWeapon(cls): #Make something like this for the armory and items for chests
+        lvls = ["common", "uncommon", "rare", "epic", "legendary", "godly"]
+        lvl = random.choices(lvls, weights=[0.8, 0.1, 0.05, 0.03, 0.0199, 0.001], k=1)[0]
+        lowSkills = {"hollow scream":Skills.LowClassSkills.HollowScream, "beserk":Skills.LowClassSkills.Beserk,
+                        "dopleganger":Skills.LowClassSkills.Dopleganger}
+        midSkills = {"incinerate":Skills.MidClassSkills.Incinerate, "double wield":Skills.MidClassSkills.DoubleWield,
+                        "shiver":Skills.MidClassSkills.Shiver}
+        highWeapons = {"parxe":Skills.Epic.Parxe}
+        legendaryWeapons = {"chaos sword":Skills.Legendary.ChaosSword}
+        godlyWeapons = {"phantom slicer":Skills.Godly.Phantomslicer, "dead eye":Skills.Godly.DeadEye}
+
+
+        if lvl == "common":
+            weaponName, weaponRarity = random.choice(list(lowSkills.items()))
+        elif lvl == "uncommon":
+            weaponNme, weaponRarity = random.choice(list(midSkills.items()))
+        elif lvl == "rare":
+            weaponName, weaponRarity = random.choice(list(rareWeapons.items()))
+        elif lvl == "epic":
+            weaponName, weaponRarity = random.choice(list(epicWeapons.items()))
+        elif lvl == "legendary":
+            weaponName, weaponRarity = random.choice(list(legendaryWeapons.items()))
+        elif lvl == "godly":
+            weaponName, weaponRarity = random.choice(list(godlyWeapons.items()))
+        else:
+            return None
+        return weaponRarity()
 
 class Skills:
     class LowClassSkills:
@@ -20,7 +49,7 @@ class Skills:
         class Incinerate(BaseSkill):
             def __init__(self):
                 super().__init__(name = "Incinerate", type = "Active", description = "Burns the enemy for 3 turns, dealing 10% of their max health as damage each turn.", coolDown = 5)
-        class DoubleWeild(BaseSkill):
+        class DoubleWield(BaseSkill):
             def __init__(self):
                 super().__init__(name = "Double Weild", type = "Passive", description = "Allows you to equip 2 weapons at once.", coolDown = 0)
         class Shiver(BaseSkill):

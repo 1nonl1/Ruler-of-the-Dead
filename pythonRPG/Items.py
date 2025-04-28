@@ -2,17 +2,27 @@
 #Base Class for food
 #Base class for various items like gold, sticks, etc.
 class BaseFood:
-    def __init__(self, name, hungPoints, expAdd):
+    def __init__(self, name, hungPoints, expAdd, description):
         self.name = name
         self.hungerPoints = hungPoints
         self.expAdd = expAdd
+        self.description = description
 
 class BasePotion:
-    def __init__(self, name, duration, effect): #effect is how strong it is like for heal, the effect is how much it heals
+    def __init__(self, name, duration, effect, description): #effect is how strong it is like for heal, the effect is how much it heals
         self.name = name
         self.duration = duration
         self.effect = effect
+        self.description = description
         
 class BaseMiscellaneous:
     def __init__(self, name):
         self.name = name
+
+class Food:
+    class Berry(BaseFood):
+        def __init__(self):
+            super().__init__("Berry", 2, 1, "A small berry that can be eaten. They can be found anywhere!")
+    class Meat(BaseFood):
+        def __init__(self):
+            super().__init__("Meat", 10, 5, "A piece of meat that can be eaten. It is very filling!")
