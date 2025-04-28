@@ -8,13 +8,13 @@ class Inventory:
     def addItem(self, item):
         self.items.append(item)
 
-    def removeItem(self, item_name):
+    def removeItem(self, itemName):
         for item in self.items:
-            if item.name == item_name:
+            if item.name == itemName:
                 self.items.remove(item)
                 print(f"{item.name} has been removed from your inventory.")
                 return
-        print(f"{item_name} not found in inventory.")
+        print(f"{itemName} not found in inventory.")
 
     def showInventory(self):
         if not self.items:
@@ -32,3 +32,49 @@ class Inventory:
                 self.showInventory()
                 choice = input("Enter the name of the item to remove: ")
                 self.removeItem(choice)
+    
+    def askEquipItem(self):
+        self.showInventory()
+        choice = input("What item would you like to equip? ")
+        self.equipItem(choice)
+    
+    def equipItem(self, item):
+        match item.type:
+            case "weapon":
+                if isinstance(item, Armory.BaseWeapon):
+                    if Player.playerWeapon is None:
+                        Player.playerWeapon = item
+                        print(f"{item.name} has been equipped.")
+                    else:
+                        print(f"You already have a weapon equipped.")
+            case "helmet":
+                if isinstance(item, Armory.BaseArmor):
+                    if Player.helmet is None:
+                        Player.helmet = item
+                        print(f"{item.name} has been equipped.")
+                    else:
+                        print(f"You already have a helmet equipped.")
+            case "chestplate":
+                if isinstance(item, Armory.BaseArmor):
+                    if Player.chestplate is None:
+                        Player.chestplate = item
+                        print(f"{item.name} has been equipped.")
+                    else:
+                        print(f"You already have a chestplate equipped.")
+            case "leggings":
+                if isinstance(item, Armory.BaseArmor):
+                    if Player.leggings is None:
+                        Player.leggings = item
+                        print(f"{item.name} has been equipped.")
+                    else:
+                        print(f"You already have leggings equipped.")
+            case "boots":
+                if isinstance(item, Armory.BaseArmor):
+                    if Player.boots is None:
+                        Player.boots = item
+                        print(f"{item.name} has been equipped.")
+                    else:
+                        print(f"You already have boots equipped.")
+            case _:
+                print("This item cannot be equipped.")
+

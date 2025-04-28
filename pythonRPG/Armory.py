@@ -1,7 +1,7 @@
 import random
 
 class BaseWeapon:
-    def __init__(self, attack, armorPen, durability, name, level, rarity, enchant):
+    def __init__(self, attack, armorPen, durability, name, level, rarity, enchant, type):
         self.attack = attack
         self.armorPen = armorPen
         self.durability = durability
@@ -9,6 +9,7 @@ class BaseWeapon:
         self.level = level
         self.rarity = rarity
         self.enchanted = enchant
+        self.type = type
 
     @classmethod
     def createWeapon(cls): #Make something like this for the armory and items for chests
@@ -42,13 +43,14 @@ class BaseWeapon:
         return weaponRarity()
 
 class BaseArmor:
-    def __init__(self, armor, durability, name, level, rarity, enchant):
+    def __init__(self, armor, durability, name, level, rarity, enchant, type):
         self.armor = armor
         self.durability = durability
         self.level = level
         self.name = name
         self.rarity = rarity
         self.enchanted = enchant
+        self.type = type
         
     @classmethod
     def createArmor(cls): #Make something like this for the armory and items for chests
@@ -66,63 +68,63 @@ class Weapon:
     class Common:
         class WoodSword(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 10, armorPen = 1, durability = 100, name = "Wood Sword", level = 1, rarity = "Common", enchant = False)
+                super().__init__(attack = 10, armorPen = 1, durability = 100, name = "Wood Sword", level = 1, rarity = "Common", enchant = False, type = "weapon")
         class MakeShiftBow(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 8, armorPen = 2, durability = 100, name = "Make Shift Bow", level = 1, rarity = "Common", enchant = False)
+                super().__init__(attack = 8, armorPen = 2, durability = 100, name = "Make Shift Bow", level = 1, rarity = "Common", enchant = False, type = "weapon")
         class SmallKnife(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 5, armorPen = 1, durability = 100, name = "Small Knife", level = 1, rarity = "Common", enchant = False)
+                super().__init__(attack = 5, armorPen = 1, durability = 100, name = "Small Knife", level = 1, rarity = "Common", enchant = False, type = "weapon")
         class WoodPike(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 7, armorPen = 2, durability = 100, name = "Wood Pike", level = 1, rarity = "Common", enchant = False)
+                super().__init__(attack = 7, armorPen = 2, durability = 100, name = "Wood Pike", level = 1, rarity = "Common", enchant = False, type = "weapon")
         class BluntSpear(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 6, armorPen = 2, durability = 100, name = "Blunt Spear", level = 1, rarity = "Common", enchant = False)
+                super().__init__(attack = 6, armorPen = 2, durability = 100, name = "Blunt Spear", level = 1, rarity = "Common", enchant = False, type = "weapon")
     class Uncommon:
         class Mace(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 12, armorPen = 4, durability = 150, name = "Mace", level = 1, rarity = "Uncommon", enchant = False)
+                super().__init__(attack = 12, armorPen = 4, durability = 150, name = "Mace", level = 1, rarity = "Uncommon", enchant = False, type = "weapon")
         class SteelSpear(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 14, armorPen = 8, durability = 150, name = "Steel Spear", level = 1, rarity = "Uncommon", enchant = False)
+                super().__init__(attack = 14, armorPen = 8, durability = 150, name = "Steel Spear", level = 1, rarity = "Uncommon", enchant = False, type = "weapon")
         class SteelSword(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 13, armorPen = 5, durability = 150, name = "Steel Sword", level = 1, rarity = "Uncommon", enchant = False)
+                super().__init__(attack = 13, armorPen = 5, durability = 150, name = "Steel Sword", level = 1, rarity = "Uncommon", enchant = False, type = "weapon")
     class Rare:
         class ShadowRapier(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 15, armorPen = 7, durability = 200, name = "Shadow Rapier", level = 1, rarity = "Rare", enchant = False)
+                super().__init__(attack = 15, armorPen = 7, durability = 200, name = "Shadow Rapier", level = 1, rarity = "Rare", enchant = False, type = "weapon")
         class ReinforcedDagger(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 18, armorPen = 6, durability = 200, name = "Reinforced Dagger", level = 1, rarity = "Rare", enchant = False)
+                super().__init__(attack = 18, armorPen = 6, durability = 200, name = "Reinforced Dagger", level = 1, rarity = "Rare", enchant = False, type = "weapon")
     class Epic:
         class Parxe(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 25, armorPen = 9, durability = 300, name = "Parxe", level = 1, rarity = "Epic", enchant = False)
+                super().__init__(attack = 25, armorPen = 9, durability = 300, name = "Parxe", level = 1, rarity = "Epic", enchant = False, type = "weapon")
     class Legendary:
         class ChaosSword(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 40, armorPen = 15, durability = 500, name = "Chaos Sword", level = 1, rarity = "Legendary", enchant = False)
+                super().__init__(attack = 40, armorPen = 15, durability = 500, name = "Chaos Sword", level = 1, rarity = "Legendary", enchant = False, type = "weapon")
     class Godly:
         class Phantomslicer(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 130, armorPen = 45, durability = 100000, name = "Phantom Slicer", level = 1, rarity = "Godly", enchant = False)
+                super().__init__(attack = 130, armorPen = 45, durability = 100000, name = "Phantom Slicer", level = 1, rarity = "Godly", enchant = False, type = "weapon")
         class DeadEye(BaseWeapon):
             def __init__(self):
-                super().__init__(attack = 100, armorPen = 65, durability = 100000, name = "Dead Eye", level = 1, rarity = "Godly", enchant = False)
+                super().__init__(attack = 100, armorPen = 65, durability = 100000, name = "Dead Eye", level = 1, rarity = "Godly", enchant = False, type = "weapon")
 
 class Armor:
     class Common:
         class Helmet(BaseArmor):
             def __init__(self):
-                super().__init__(armor = 4, durability = 100, name = "Helmet", level = 1, rarity = "Common", enchant = False)
+                super().__init__(armor = 4, durability = 100, name = "Helmet", level = 1, rarity = "Common", enchant = False, type = "helmet")
         class Chestplate(BaseArmor):
             def __init__(self):
-                super().__init__(armor = 5, durability = 100, name = "Chestplate", level = 1, rarity = "Common", enchant = False)
+                super().__init__(armor = 5, durability = 100, name = "Chestplate", level = 1, rarity = "Common", enchant = False, type = "chestplate")
         class Leggings(BaseArmor):
             def __init__(self):
-                super().__init__(armor = 3, durability = 100, name = "Leggings", level = 1, rarity = "Common", enchant = False)
+                super().__init__(armor = 3, durability = 100, name = "Leggings", level = 1, rarity = "Common", enchant = False, type = "leggings")
         class Boots(BaseArmor):
             def __init__(self):
-                super().__init__(armor = 2, durability = 100, name = "Boots", level = 1, rarity = "Common", enchant = False)
+                super().__init__(armor = 2, durability = 100, name = "Boots", level = 1, rarity = "Common", enchant = False, type = "boots")

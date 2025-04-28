@@ -21,12 +21,10 @@ class Player:
         self.invCapacity = 30
         self.inv = Inventory()
         self.equipWeapon = None
-        self.equipArmor = {
-            "helmet": None,
-            "chestplate": None,
-            "leggings": None,
-            "boots": None
-        }
+        self.helmet = None
+        self.chestplate = None
+        self.leggings = None
+        self.boots = None
         self.skills = []
 
     def start(self):

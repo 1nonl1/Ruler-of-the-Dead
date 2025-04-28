@@ -6,33 +6,29 @@ class BaseSkill:
         self.description = description
         self.coolDown = coolDown
     @classmethod
-    def createWeapon(cls): #Make something like this for the armory and items for chests
-        lvls = ["common", "uncommon", "rare", "epic", "legendary", "godly"]
-        lvl = random.choices(lvls, weights=[0.8, 0.1, 0.05, 0.03, 0.0199, 0.001], k=1)[0]
+    def createSkill(cls): #Make something like this for the armory and items for chests
+        lvls = ["low", "mid", "high","godly"]
+        lvl = random.choices(lvls, weights=[0.8199, 0.1, 0.05, 0.03, 0.0001], k=1)[0]
         lowSkills = {"hollow scream":Skills.LowClassSkills.HollowScream, "beserk":Skills.LowClassSkills.Beserk,
                         "dopleganger":Skills.LowClassSkills.Dopleganger}
         midSkills = {"incinerate":Skills.MidClassSkills.Incinerate, "double wield":Skills.MidClassSkills.DoubleWield,
                         "shiver":Skills.MidClassSkills.Shiver}
-        highWeapons = {"parxe":Skills.Epic.Parxe}
-        legendaryWeapons = {"chaos sword":Skills.Legendary.ChaosSword}
-        godlyWeapons = {"phantom slicer":Skills.Godly.Phantomslicer, "dead eye":Skills.Godly.DeadEye}
+        highSkills = {"overdrive":Skills.HighClassSkills.Overdrive}
+        godlySkills = {"disintegrate":Skills.GodlySkills.Disintegrate, "auto unwind":Skills.GodlySkills.AutoUnwind,
+                        "identity theif":Skills.GodlySkills.IdentityTheif}
 
 
-        if lvl == "common":
-            weaponName, weaponRarity = random.choice(list(lowSkills.items()))
-        elif lvl == "uncommon":
-            weaponNme, weaponRarity = random.choice(list(midSkills.items()))
-        elif lvl == "rare":
-            weaponName, weaponRarity = random.choice(list(rareWeapons.items()))
-        elif lvl == "epic":
-            weaponName, weaponRarity = random.choice(list(epicWeapons.items()))
-        elif lvl == "legendary":
-            weaponName, weaponRarity = random.choice(list(legendaryWeapons.items()))
+        if lvl == "low":
+            skillName, skillLevel = random.choice(list(lowSkills.items()))
+        elif lvl == "mid":
+            skillNme, skillLevel = random.choice(list(midSkills.items()))
+        elif lvl == "high":
+            skillName, skillLevel = random.choice(list(highSkills.items()))
         elif lvl == "godly":
-            weaponName, weaponRarity = random.choice(list(godlyWeapons.items()))
+            skillName, skillLevel = random.choice(list(godlySkills.items()))
         else:
             return None
-        return weaponRarity()
+        return skillLevel()
 
 class Skills:
     class LowClassSkills:
