@@ -1,6 +1,5 @@
 class Inventory:
-    def __init__(self):
-        self.items = []  # List to store all items
+    items = []  # List to store all items
 
     def addItem(self, item):
         self.items.append(item)
@@ -22,3 +21,5 @@ class Inventory:
             for item in self.items:
                 print(f"{i}. {item.name}, Rarity: {item.rarity}, Durability: {item.durability}")
                 i += 1
+inv = Inventory.Inventory()
+print(inv.items)

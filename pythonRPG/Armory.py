@@ -17,10 +17,11 @@ class BaseWeapon:
         commonWeapons = {"wood sword": Weapon.Common.WoodSword, "make shift bow": Weapon.Common.MakeShiftBow,
                         "small knife": Weapon.Common.SmallKnife, "wood pike": Weapon.Common.WoodPike,
                         "blunt spear": Weapon.Common.BluntSpear}
-        uncommonWeapons = {"mace": Weapon.Uncommon.Mace}
-        rareWeapons = {"shadow rapier": Weapon.Rare.ShadowRapier}
-        epicWeapons = {"sword": Weapon.Epic.Sword}
-        legendaryWeapons = {"sword": Weapon.Legendary.Sword}
+        uncommonWeapons = {"mace": Weapon.Uncommon.Mace, "steel spear": Weapon.Uncommon.SteelSpear,
+                        "steel sword": Weapon.Uncommon.SteelSword}
+        rareWeapons = {"shadow rapier": Weapon.Rare.ShadowRapier, "reinforced dagger": Weapon.Rare.ReinforcedDagger}
+        epicWeapons = {"parxe": Weapon.Epic.Parxe}
+        legendaryWeapons = {"chaos sword": Weapon.Legendary.ChaosSword}
         godlyWeapons = {"phantom slicer": Weapon.Godly.Phantomslicer, "dead eye": Weapon.Godly.DeadEye}
 
 
@@ -82,16 +83,27 @@ class Weapon:
         class Mace(BaseWeapon):
             def __init__(self):
                 super().__init__(attack = 12, armorPen = 4, durability = 150, name = "Mace", level = 1, rarity = "Uncommon", enchant = False)
+        class SteelSpear(BaseWeapon):
+            def __init__(self):
+                super().__init__(attack = 14, armorPen = 8, durability = 150, name = "Steel Spear", level = 1, rarity = "Uncommon", enchant = False)
+        class SteelSword(BaseWeapon):
+            def __init__(self):
+                super().__init__(attack = 13, armorPen = 5, durability = 150, name = "Steel Sword", level = 1, rarity = "Uncommon", enchant = False)
     class Rare:
         class ShadowRapier(BaseWeapon):
             def __init__(self):
                 super().__init__(attack = 15, armorPen = 7, durability = 200, name = "Shadow Rapier", level = 1, rarity = "Rare", enchant = False)
+        class ReinforcedDagger(BaseWeapon):
+            def __init__(self):
+                super().__init__(attack = 18, armorPen = 6, durability = 200, name = "Reinforced Dagger", level = 1, rarity = "Rare", enchant = False)
     class Epic:
-        class Sword(BaseWeapon):
-            pass
+        class Parxe(BaseWeapon):
+            def __init__(self):
+                super().__init__(attack = 25, armorPen = 9, durability = 300, name = "Parxe", level = 1, rarity = "Epic", enchant = False)
     class Legendary:
-        class Sword(BaseWeapon):
-            pass
+        class ChaosSword(BaseWeapon):
+            def __init__(self):
+                super().__init__(attack = 40, armorPen = 15, durability = 500, name = "Chaos Sword", level = 1, rarity = "Legendary", enchant = False)
     class Godly:
         class Phantomslicer(BaseWeapon):
             def __init__(self):
