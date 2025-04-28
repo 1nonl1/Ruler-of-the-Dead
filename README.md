@@ -3,6 +3,7 @@ Welcome to the Dungeon RPG game in Python terminal! If you have any suggestions 
 It will also include some...
 - [game lore](#game-lore)
 - information on entities
+- information on armor and weapons
 - information on items in the game
 - and tips
 
@@ -28,6 +29,7 @@ It is a normal day on Earth, you are talking to your friend in a crowded city. S
 You find out that there are good and bad creatures and plants. When you defeat creatures, you feel stronger. After eliminating 32 creatures, you see words in front of your vision, **New Skill Gained: Looter, Increases loot dropped**. You also gain a sword and some armor. Before you've been eliminating docile creatures, like bunnies and slimes. But now you killed your first low-level creature, and when eliminated it dropped a sword and armor.
 
 [//]:#Info-on-entities
+[//]:#Info-on-armor-&-weapons
 [//]:#Info-on-Items
 [//]:#tips
 ## Game Commands
