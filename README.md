@@ -27,6 +27,9 @@ It is a normal day on Earth, you are talking to your friend in a crowded city. S
 
 You find out that there are good and bad creatures and plants. When you defeat creatures, you feel stronger. After eliminating 32 creatures, you see words in front of your vision, **New Skill Gained: Looter, Increases loot dropped**. You also gain a sword and some armor. Before you've been eliminating docile creatures, like bunnies and slimes. But now you killed your first low-level creature, and when eliminated it dropped a sword and armor.
 
+[//]:#Info-on-entities
+[//]:#Info-on-Items
+[//]:#tips
 ## Game Commands
     1. use_item (Will ask you what item you want to use, or to check the description, and it will use that item)
     2. scavenge (You will look for food, with a chance that an entity might spawn or you find a chest)
