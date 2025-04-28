@@ -44,3 +44,6 @@ Under Development...
 
 ## Version History
 Under Development...
+
+## License
+[MIT](
