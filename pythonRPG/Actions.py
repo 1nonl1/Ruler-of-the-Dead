@@ -28,6 +28,8 @@ class Actions:
                     player.showInv()
                 case "equip_item":
                     player.inv.askEquipItem()
+                case "show_equipItems":
+                    player.inv.showEquipItems()
                     
         else:
             print("Invalid action!")
