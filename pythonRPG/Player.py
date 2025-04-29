@@ -19,8 +19,8 @@ class Player:
         self.alive = True
         self.hunger = 0
         self.invCapacity = 30
-        self.inv = Inventory()
-        self.equipWeapon = None
+        self.inv = Inventory(self)
+        self.weapon = None
         self.helmet = None
         self.chestplate = None
         self.leggings = None
