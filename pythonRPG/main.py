@@ -9,7 +9,7 @@ def initialize():
     env = Enviornment.Enviornment()
     act = Actions.Actions()
     player = Player.Player(0,0,0,0,0,0,"")
-    inv = Inventory.Inventory()
+    inv = Inventory.Inventory(player)
     #sword = Weapon.Common.Sword()
     #player.addToInv(sword)
 def main():

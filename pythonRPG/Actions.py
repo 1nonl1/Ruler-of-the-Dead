@@ -26,6 +26,8 @@ class Actions:
                     player.toString()  # Call the toString method on the player instance
                 case "view_inv":
                     player.showInv()
+                case "equip_item":
+                    player.inv.askEquipItem()
                     
         else:
             print("Invalid action!")

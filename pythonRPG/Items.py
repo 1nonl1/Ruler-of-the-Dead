@@ -18,7 +18,7 @@ class BasePotion:
 class BaseMiscellaneous:
     def __init__(self, name):
         self.name = name
-
+#Add Hiraecrystal
 class Food:
     class Berry(BaseFood):
         def __init__(self):

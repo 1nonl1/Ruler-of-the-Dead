@@ -56,17 +56,21 @@ class Player:
     def openChest(self):
         self.numOfItems = random.randint(3, 10)
         for i in range(self.numOfItems):
-            item = random.choice(["armor", "weapon"]) #automatically add gold and exp
-            if item == "weapon":
-                weapon = Armory.BaseWeapon.createWeapon()
-                if weapon:
-                    print(f"You found a {weapon.name}!")
-                    self.addToInv(weapon)
-            elif item == "armor":
-                armor = Armory.BaseArmor.createArmor()
-                if armor:
-                    print(f"You found an armor {armor.name}!")
-                    self.addToInv(armor)
+            if len(self.inv.items) > self.invCapacity:
+                print("Your inventory is full!")
+                break
+            else:
+                item = random.choice(["armor", "weapon"]) #automatically add gold and exp
+                if item == "weapon":
+                    weapon = Armory.BaseWeapon.createWeapon()
+                    if weapon:
+                        print(f"You found a {weapon.name}!")
+                        self.addToInv(weapon)
+                elif item == "armor":
+                    armor = Armory.BaseArmor.createArmor()
+                    if armor:
+                        print(f"You found an armor {armor.name}!")
+                        self.addToInv(armor)
         self.addGold = random.randint(20, 80)
         print(f"You found {self.addGold} gold!")
         self.gold += self.addGold
@@ -105,7 +109,11 @@ class Player:
                 choice = input("Do you want to...\n\t1. Attack\n\t2. Use an item\n\t3. Use skill\n\t4. run\n> ").lower()
                 #Incorporate skills, items, and critical hits
                 if choice == "attack":
-                    damage = max(0, self.attack - (enemy.armor - self.armorPen))
+                    if random.random() < self.critChance:
+                        print("Critical hit!")
+                        damage = max(0, (self.attack * 2) - (enemy.armor - self.armorPen))
+                    else:
+                        damage = max(0, self.attack - (enemy.armor - self.armorPen))
                     print(f"You attack the {enemy.name} for {damage} damage!")
                     enemy.health -= damage
                     print(f"Enemy health: {enemy.health}")
@@ -116,7 +124,11 @@ class Player:
                         self.gold += 10
                         break
                     else:
-                        enemy_damage = max(0, enemy.attack - (self.armor - enemy.armorPen))
+                        if random.random() < enemy.critChance:
+                            print("The enemy lands a critical hit!")
+                            enemy_damage = max(0, (enemy.attack * 2) - (self.armor - enemy.armorPen))
+                        else:
+                            enemy_damage = max(0, enemy.attack - (self.armor - enemy.armorPen))
                         print(f"The {enemy.name} attacks you for {enemy_damage} damage!")
                         self.health -= enemy_damage
                         print(f"Your health: {self.health}")

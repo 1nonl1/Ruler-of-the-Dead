@@ -21,8 +21,7 @@ class Inventory:
         if not self.items:
             print("Your inventory is empty.")
         else:
-            print("Your inventory contains:")
-            for i, item in enumerate(self.items, start = 1):
+            for i, item in enumerate(self.items, start=1):
                 print(f"{i}. {item.name}, Rarity: {item.rarity}, Durability: {item.durability}")
 
     def checkInvFull(self):
@@ -33,15 +32,18 @@ class Inventory:
                 self.showInventory()
                 choice = input("Enter the name of the item to remove: ")
                 self.removeItem(choice)
-    
+
     def askEquipItem(self):
         self.showInventory()
-        choice = input("What item would you like to equip? ")
-        for item in self.items:
-            if item.name == choice:
-                self.equipItem(item)
-                return
-    
+        if len(self.items) == 0:
+            return
+        else:
+            choice = input("What item would you like to equip? ")
+            for item in self.items:
+                if item.name == choice:
+                    self.equipItem(item)
+                    return
+
     def equipItem(self, item):
         if item in self.items:
             match item.type:
@@ -65,7 +67,7 @@ class Inventory:
                         print(f"You already have a chestplate equipped.")
                 case "leggings":
                     if self.player.leggings is None:
-                        sel.player.leggings = item
+                        self.player.leggings = item
                         print(f"{item.name} has been equipped.")
                     else:
                         print(f"You already have leggings equipped.")
@@ -77,3 +79,26 @@ class Inventory:
                         print(f"You already have boots equipped.")
                 case _:
                     print("This item cannot be equipped.")
+
+    def checkEquipped(self):
+        print("Weapon equipped" if self.player.weapon is not None else "No weapon equipped")
+        print("Helmet equipped" if self.player.helmet is not None else "No helmet equipped")
+        print("Chestplate equipped" if self.player.chestplate is not None else "No chestplate equipped")
+        print("Leggings equipped" if self.player.leggings is not None else "No leggings equipped")
+        print("Boots equipped" if self.player.boots is not None else "No boots equipped")
+
+    def duplicateItems(self):
+        """Renames duplicate items in the inventory by appending a number to their names."""
+        item_groups = {}
+        for item in self.items:
+            if item.name not in item_groups:
+                item_groups[item.name] = []
+            item_groups[item.name].append(item)
+
+        for base_name, items in item_groups.items():
+            if len(items) > 1:  # Only process items with duplicates
+                for i, item in enumerate(items, start=1):
+                    item.name = f"{base_name}{i}"
+                    print(f"Renamed item: {item.name}")
+
+
