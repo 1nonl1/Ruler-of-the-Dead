@@ -12,9 +12,9 @@ But first, some information on how to [install](#installation) and set up the ga
 
 ## Installation
 ### Installing via Command Line
-    1. Type git clone (Insert link here) in your preferred directory.
-    2. Then type python main.py
-    3. Enjoy the game!
+1. Type: `git clone (Insert link here)` in your preferred directory.
+2. Then type `python main.py`
+3. Enjoy the game!
 
 ### Installing via zip
     1. Download the zip file in github
@@ -44,6 +44,9 @@ You find out that there are good and bad creatures and plants. When you defeat c
 ## Creator Notes
 [//]:#Mention-contributors
 [//]:#Discord-link
+>[!IMPORTANT]
+>This game is still in its developmental stage!
+>There may be lots of errors; please report them.
 Under Development...
 
 ## Version History
