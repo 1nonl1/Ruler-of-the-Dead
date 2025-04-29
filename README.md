@@ -17,10 +17,10 @@ But first, some information on how to [install](#installation) and set up the ga
 3. Enjoy the game!
 
 ### Installing via zip
-    1. Download the zip file in github
-    2. Extract the contents
-    3. Navigate to main.py and run it
-    4. Enjoy the game!
+1. Download the zip file in github
+2. Extract the contents
+3. Navigate to main.py and run it
+4. Enjoy the game!
 
 ## Game Lore
 If you have seen the anime series _That Time I Got Reincarnated As A Slime_ and _Sword Art Online_, you will realize it relates a lot to these series.\
