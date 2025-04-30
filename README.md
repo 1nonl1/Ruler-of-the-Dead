@@ -2,9 +2,10 @@
 Welcome to the Dungeon RPG game in Python terminal! If you have any suggestions for the game, join my Discord server! This guide shows you the commands to play the game, and a little on how the game works.
 It will also include some...
 > - [game lore](#game-lore)
-> - [information on entities](#info-on-entities)
-> - [information on armor and weapons](#info-on-armor-and-weapons)
-> - [information on items in the game](#info-on-items)
+> - [Game Info](#game-info)
+>     - [information on entities](#info-on-entities)
+>     - [information on armor and weapons](#info-on-armor-and-weapons)
+>     - [information on items in the game](#info-on-items)
 > - and tips
 
 [//]:#
