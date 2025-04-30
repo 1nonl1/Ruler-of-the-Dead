@@ -1,5 +1,6 @@
 # Dungeon RPG Game in Python Terminal
-![Static Badge](https://img.shields.io/badge/:badgeContent)
+[![Build Status](https://img.shields.io/badge/Code_Completion_Estimate-50%25-blue)]()
+
 Welcome to the Dungeon RPG game in Python terminal! If you have any suggestions for the game, join my Discord server! This guide shows you the commands to play the game, and a little on how the game works.
 It will also include some...
 > - [game lore](#game-lore)
