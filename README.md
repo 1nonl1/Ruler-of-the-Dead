@@ -2,9 +2,9 @@
 Welcome to the Dungeon RPG game in Python terminal! If you have any suggestions for the game, join my Discord server! This guide shows you the commands to play the game, and a little on how the game works.
 It will also include some...
 > - [game lore](#game-lore)
-> - information on entities
-> - information on armor and weapons
-> - information on items in the game
+> - [information on entities](#info-on-entities)
+> - [information on armor and weapons](#info-on-armor-and-weapons)
+> - [information on items in the game](#info-on-items)
 > - and tips
 
 [//]:#
@@ -17,7 +17,7 @@ But first, some information on how to [install](#installation) and set up the ga
 > 3. Enjoy the game!
 
 ### Installing via zip
-> 1. Download the zip file in github
+> 1. Download the zip file from GitHub
 > 2. Extract the contents
 > 3. Navigate to main.py and run it
 > 4. Enjoy the game!
@@ -29,9 +29,13 @@ It is a normal day on Earth, you are talking to your friend in a crowded city. S
 You find out that there are good and bad creatures and plants. When you defeat creatures, you feel stronger. After eliminating 32 creatures, you see words in front of your vision, **New Skill Gained: Looter, Increases loot dropped**. You also gain a sword and some armor. Before you've been eliminating docile creatures, like bunnies and slimes. But now you killed your first low-level creature, and when eliminated it dropped a sword and armor.
 
 [//]:#Info-on-entities
-[//]:#Info-on-armor-&-weapons
+[//]:#Info-on-armor-and-weapons
 [//]:#Info-on-Items
 [//]:#tips
+## Game Info
+### Info on Entities
+### Info on Armor and Weapons
+### Info on Items
 ## Game Commands
     1. use_item (Will ask you what item you want to use, or to check the description, and it will use that item)
     2. scavenge (You will look for food, with a chance that an entity might spawn or you find a chest)
@@ -40,12 +44,14 @@ You find out that there are good and bad creatures and plants. When you defeat c
     5. view_inv (Views your current inventory)
     6. equip_item (Prints out the items in your inventory. Type the name of the item you want)
     7. show_equipItems (Shows your currently equipped items)
+> [!WARNING]
+> Miss typing a command at any point in the code may cause you to lose a turn!
 
 ## Creator Notes
 [//]:#Mention-contributors
 [//]:#Discord-link
 > [!IMPORTANT]
-> This game is still in its developmental stage!There may be lots of errors; please report them.
+> This game is still in its developmental stage! There may be lots of errors; please report them.
 <!-- Under Development -->
 
 ## Version History
