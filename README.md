@@ -44,13 +44,12 @@ You find out that there are good and bad creatures and plants. When you defeat c
 ## Creator Notes
 [//]:#Mention-contributors
 [//]:#Discord-link
->[!IMPORTANT]
->This game is still in its developmental stage!
->There may be lots of errors; please report them.
-Under Development...
+> [!IMPORTANT]
+> This game is still in its developmental stage!There may be lots of errors; please report them.
+<!-- Under Development -->
 
 ## Version History
-Under Development...
+<!-- Under Development -->
 
 ## License
 [MIT](https://github.com/1nonl1/dungeonRPG/blob/39647fdb7b704e89a27c39187223ccc1a7b99154/LICENSE)
