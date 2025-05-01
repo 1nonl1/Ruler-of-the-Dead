@@ -44,6 +44,7 @@ You find out that there are good and bad creatures and plants. When you defeat c
 ## Game Commands
 > [!WARNING]
 > You must `rest` in order to **save** and progress to the next day!
+
 > * use_item (Will ask you what item you want to use, or to check the description, and it will use that item)
 > * scavenge (You will look for food, with a chance that an entity might spawn or you find a chest)
 > * rest (Recovers some health and saves the game)
