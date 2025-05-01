@@ -1,6 +1,6 @@
 # <div align = "center">Ruler of the Dead</div>
 <p align = "center">
-    <img src = "https://img.shields.io/badge/Code_Completion_Estimate-50%25-blue" alt = "badge">
+    <img src = "https://img.shields.io/badge/Base_Game_Completion_Estimate-50%25-blue" alt = "badge">
 </p>
 
 Welcome to the Dungeon RPG game in Python terminal! If you have any suggestions for the game, join my Discord server! This guide shows you the commands to play the game, and a little on how the game works.
