@@ -129,7 +129,7 @@ class Player:
                 #Incorporate skills, items
                 if choice == "attack" or choice == "1":
                     self.hunger += 1
-                    self.engergy -= 1
+                    self.energy -= 1
                     if random.random() < self.critChance:
                         print("Critical hit!")
                         damage = max(0, (self.attack * 2) - (enemy.armor - self.armorPen))
