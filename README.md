@@ -43,13 +43,15 @@ You find out that there are good and bad creatures and plants. When you defeat c
 ### Info on Armor and Weapons
 ### Info on Items
 ## Game Commands
-    1. use_item (Will ask you what item you want to use, or to check the description, and it will use that item)
-    2. scavenge (You will look for food, with a chance that an entity might spawn or you find a chest)
-    3. rest (Recovers some health)
-    4. check_stats (Prints out your current stats)
-    5. view_inv (Views your current inventory)
-    6. equip_item (Prints out the items in your inventory. Type the name of the item you want)
-    7. show_equipItems (Shows your currently equipped items)
+> [!WARNING]
+> You must `rest` in order to **save** and progress to the next day!
+> * use_item (Will ask you what item you want to use, or to check the description, and it will use that item)
+> * scavenge (You will look for food, with a chance that an entity might spawn or you find a chest)
+> * rest (Recovers some health and saves the game)
+> * check_stats (Prints out your current stats)
+> * view_inv (Views your current inventory)
+> * equip_item (Prints out the items in your inventory. Type the name of the item you want)
+> * show_equipItems (Shows your currently equipped items)
 
 ## Creator Notes
 [//]:#Mention-contributors
