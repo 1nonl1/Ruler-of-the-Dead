@@ -1,4 +1,4 @@
-# <div align = "center">Dungeon RPG Game in Python Terminal</div>
+# <div align = "center">Ruler of the Dead</div>
 <p align = "center">
     <img src = "https://img.shields.io/badge/Code_Completion_Estimate-50%25-blue" alt = "badge">
 </p>
