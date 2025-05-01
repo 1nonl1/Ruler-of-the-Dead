@@ -12,49 +12,59 @@ class BaseEntity:
 
     @classmethod
     def createEntity(cls):
-        levels = ["lowLevel", "midLevel", "highLevel"]
-        level = random.choices(levels, weights=[0.9, 0.09, 0.01], k=1)[0]
+        levels = ["lowLevel", "midLevel", "highLevel", "mythical"]
+        level = random.choices(levels, weights=[0.9, 0.0899999, 0.01, 0.0000001], k=1)[0]
         lowLevelEntities = {"wolf": Entities.lowLevel.Wolf, "spider": Entities.lowLevel.Spider}
         midLevelEntities = {"ogre": Entities.midLevel.Ogre}
         highLevelEntities = {"dragon": Entities.highLevel.Dragon}
+        mythicalEntities = {"dood": Entities.Mythical.Dood, "Horretarako": Entities.Mythical.Horretarako}
 
         if level == "lowLevel":
-            entity_name, entity_class = random.choice(list(lowLevelEntities.items()))
+            entityName, entityClass = random.choice(list(lowLevelEntities.items()))
         elif level == "midLevel":
-            entity_name, entity_class = random.choice(list(midLevelEntities.items()))
+            entityName, entityClass = random.choice(list(midLevelEntities.items()))
         elif level == "highLevel":
-            entity_name, entity_class = random.choice(list(highLevelEntities.items()))
+            entityName, entityClass = random.choice(list(highLevelEntities.items()))
+        elif level == "mythical":
+            enityName,entityClass = random.choice(list(mythicalEntities.items()))
         else:
             return None
-        return entity_class()
+        return entityClass()
 
 
 class Entities: #The stats of the entities go up bases on the player level
     class lowLevel:
         class Wolf(BaseEntity):
             def __init__(self):
-                super().__init__(attack = 5, health = 40, armorPen = 3, armor = 5, critChance = 0.05, expGive = 10, name = "Wolf")
+                super().__init__(attack = 10, health = 40, armorPen = 3, armor = 5, critChance = 0.05, expGive = 10, name = "Wolf")
 
         class Spider(BaseEntity):
             def __init__(self):
-                super().__init__(attack = 4, health = 60, armorPen = 1, armor = 10, critChance = 0.05, expGive = 10, name = "Spider")
+                super().__init__(attack = 6, health = 60, armorPen = 1, armor = 10, critChance = 0.05, expGive = 10, name = "Spider")
 
     class midLevel:
         class Ogre(BaseEntity):
             def __init__(self):
-                super().__init__(attack = 10, health = 100, armorPen = 5, armor = 15, critChance = 0.1, expGive = 20, name = "Ogre")
+                super().__init__(attack = 30, health = 200, armorPen = 5, armor = 15, critChance = 0.1, expGive = 20, name = "Ogre")
 
     class highLevel:
         class Dragon(BaseEntity):
             def __init__(self):
-                super().__init__(attack = 30, health = 250, armorPen = 20, armor = 40, critChance = 0.3, expGive = 50, name = "Dragon")
+                super().__init__(attack = 100, health = 300, armorPen = 20, armor = 40, critChance = 0.3, expGive = 50, name = "Dragon")
 
     class Boss:
         class GoblinKing(BaseEntity):
-            pass
+            def __init__(self):
+                super().__init__(attack = 350, health = 1000, armorPen = 20, armor = 40, critChance = 0.4, expGive = 2000, name = "Goblin King")
         class DemonLord(BaseEntity):
+            pass
+        class Phoenix(BaseEntity):
             pass
     
     class Mythical:
-        class Phoenix(BaseEntity):
-            pass
+        class Dood(BaseEntity):
+            def __init__(self):
+                super().__init__(attack = 10000, health = 5000, armorPen = 70, armor = 80, critChance = 0.8, expGive = 100000, name = "Dood")
+        class Horretarako(BaseEntity):
+            def __init__(self):
+                super().__init__(attack = 500, health = 10000, armorPen = 90, armor = 95, critChance = 0.5, expGive = 100000, name = "Horretarko")

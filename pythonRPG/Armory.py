@@ -54,9 +54,25 @@ class BaseArmor:
         
     @classmethod
     def createArmor(cls): #Make something like this for the armory and items for chests
-        lvls = ["common", "uncommon"]
-        lvl = random.choices(lvls, weights=[0.9, 0.1], k=1)[0]
-        commonArmor = {"helmet": Armor.Common.Helmet, "chestplate": Armor.Common.Chestplate}
+        lvls = ["common", "uncommon", "rare", "epic", "legendary", "godly"]
+        lvl = random.choices(lvls, weights=[0.8, 0.1, 0.05, 0.03, 0.0199, 0.001], k=1)[0]
+        commonArmor = {"bucket helmet": Armor.Common.BucketHelmet, "shirt": Armor.Common.Shirt,
+                       "ripped pants": Armor.Common.RippedPants, "sandals": Armor.Common.Sandals}
+        
+        uncommonArmor = {"rusty helmet": Armor.Uncommon.RustyHelmet, "chain chestplate": Armor.Uncommon.ChainChestplate,
+                         "leather pants": Armor.Uncommon.LeatherPants, "leather shoes": Armor.Uncommon.LeatherShoes}
+        
+        rareArmor = {"steel helmet": Armor.Rare.SteelHelmet, "steel chestplate": Armor.Rare.SteelChestplate,
+                         "bendy steel skirt": Armor.Rare.BendySteelSkirt, "cushioned steel boots": Armor.Rare.CushionedSteelBoots}
+        
+        epicArmor = {"epic helmet": Armor.Epic.EpicHelmet, "steel heart": Armor.Epic.SteelHeart,
+                         "reinforced lggings": Armor.Epic.ReinforcedLeggings, "boots of epic": Armor.Epic.BootsOfEpic}
+        
+        legendaryArmor = {"skele hele": Armor.Ledgendary.SkeleHele, "dragon chest": Armor.Ledgendary.DragonChest,
+                         "obsidian leggings": Armor.Ledgendary.ObsidianLeggings, "achilles heel": Armor.Ledgendary.AchillesHeel}
+        
+        godlyArmor = {"crown of death": Armor.Godly.CrownOfDeath, "immortal heart": Armor.Godly.ImmortalHeart,
+                         "fire leggings": Armor.Godly.FireLeggings, "speed shoes": Armor.Godly.SpeedShoes}
 
         if lvl == "common":
             armorName, armorRarity = random.choice(list(commonArmor.items()))
@@ -116,15 +132,80 @@ class Weapon:
 
 class Armor:
     class Common:
-        class Helmet(BaseArmor):
+        class BucketHelmet(BaseArmor):
             def __init__(self):
-                super().__init__(armor = 4, durability = 100, name = "Helmet", level = 1, rarity = "Common", enchant = False, type = "helmet")
-        class Chestplate(BaseArmor):
+                super().__init__(armor = 2, durability = 100, name = "Bucket Helmet", level = 1, rarity = "Common", enchant = False, type = "helmet")
+        class Shirt(BaseArmor):
             def __init__(self):
-                super().__init__(armor = 5, durability = 100, name = "Chestplate", level = 1, rarity = "Common", enchant = False, type = "chestplate")
-        class Leggings(BaseArmor):
+                super().__init__(armor = 1, durability = 100, name = "Shirt", level = 1, rarity = "Common", enchant = False, type = "chestplate")
+        class RippedPants(BaseArmor):
             def __init__(self):
-                super().__init__(armor = 3, durability = 100, name = "Leggings", level = 1, rarity = "Common", enchant = False, type = "leggings")
-        class Boots(BaseArmor):
+                super().__init__(armor = 1, durability = 100, name = "Ripped Pants", level = 1, rarity = "Common", enchant = False, type = "leggings")
+        class Sandals(BaseArmor):
             def __init__(self):
-                super().__init__(armor = 2, durability = 100, name = "Boots", level = 1, rarity = "Common", enchant = False, type = "boots")
+                super().__init__(armor = 1, durability = 100, name = "Sandals", level = 1, rarity = "Common", enchant = False, type = "boots")
+    class Uncommon:
+        class RustyHelmet(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 5, durability = 150, name = "Rusty Helmet", level = 1, rarity = "Uncommon", enchant = False, type = "helmet")
+        class ChainChestplate(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 4, durability = 150, name = "Chain Chestplate", level = 1, rarity = "Uncommon", enchant = False, type = "chestplate")
+        class LeatherPants(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 4, durability = 150, name = "Leather Pants", level = 1, rarity = "Uncommon", enchant = False, type = "leggings")
+        class LeatherShoes(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 3, durability = 150, name = "Leather Shoes", level = 1, rarity = "Uncommon", enchant = False, type = "boots")
+    class Rare:
+        class SteelHelmet(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 7, durability = 200, name = "Reinforced Steel Helmet", level = 1, rarity = "Rare", enchant = False, type = "helmet")
+        class SteelChestplate(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 6, durability = 200, name = "Reinforced Steel Chestplate", level = 1, rarity = "Rare", enchant = False, type = "chestplate")
+        class BendySteelSkirt(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 6, durability = 200, name = "Bendy Steel Skirt", level = 1, rarity = "Rare", enchant = False, type = "leggings")
+        class CushionedSteelBoots(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 5, durability = 200, name = "Cushioned Steel Boots", level = 1, rarity = "Rare", enchant = False, type = "boots")
+    class Epic:
+        class EpicHelmet(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 10, durability = 300, name = "Epic Helmet", level = 1, rarity = "Epic", enchant = False, type = "helmet")
+        class SteelHeart(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 9, durability = 300, name = "Steel Heart", level = 1, rarity = "Epic", enchant = False, type = "chestplate")
+        class ReinforcedLeggings(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 9, durability = 300, name = "Reinforced Leggings", level = 1, rarity = "Epic", enchant = False, type = "leggings")
+        class BootsOfEpic(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 8, durability = 300, name = "Boots Of Epic?", level = 1, rarity = "Epic", enchant = False, type = "boots")
+    class Ledgendary:
+        class SkeleHele(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 15, durability = 400, name = "Skele Hele", level = 1, rarity = "Epic", enchant = False, type = "helmet")
+        class DragonChest(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 14, durability = 400, name = "Dragon Chest", level = 1, rarity = "Epic", enchant = False, type = "chestplate")
+        class ObsidianLeggings(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 14, durability = 400, name = "Obsidian Leggings", level = 1, rarity = "Epic", enchant = False, type = "leggings")
+        class AchillesHeel(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 13, durability = 400, name = "Achilles Heel", level = 1, rarity = "Epic", enchant = False, type = "boots")
+    class Godly:
+        class CrownOfDeath(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 30, durability = 1000, name = "Skele Hele", level = 1, rarity = "Epic", enchant = False, type = "helmet")
+        class ImmortalHeart(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 29, durability = 1000, name = "Immortal Chest", level = 1, rarity = "Epic", enchant = False, type = "chestplate")
+        class FireLeggings(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 29, durability = 1000, name = "Fire Leggings", level = 1, rarity = "Epic", enchant = False, type = "leggings")
+        class SpeedShoes(BaseArmor):
+            def __init__(self):
+                super().__init__(armor = 28, durability = 1000, name = "Speed Shoes", level = 1, rarity = "Epic", enchant = False, type = "boots")

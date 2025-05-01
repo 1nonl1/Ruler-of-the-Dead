@@ -17,13 +17,14 @@ def main():
     env.checkOutside()
     act.mainAction(player)
     player.levelUp()
+    inv.checkInvFull()
+    player.decay()
 
 if __name__ == "__main__":
     initialize()
     play = player.start()
     while player.alive == True:
         main()
-        inv.checkInvFull()
         env.checkOutside()
         act.endTurn = False
     

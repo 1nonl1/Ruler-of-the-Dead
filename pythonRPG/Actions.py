@@ -25,6 +25,8 @@ class Actions:
                     case "rest":
                         print("You rest!")
                         heal = random.randint(5, 20) 
+                        if player.health + heal > player.maxHealth:
+                            heal = player.maxHealth - player.health
                         player.health += heal
                         print(f"You gained {heal} health!")
                         self.endTurn = True
@@ -39,13 +41,13 @@ class Actions:
                         
             else:
                 print("Invalid action!")
-        def scavenge(self, play):
-            r = random.randint(0, 1)#make it 10
-            if r == 1:
-                print("You found a chest! ")
-                play.openChest()
+    def scavenge(self, play):
+        r = random.randint(0, 10)
+        if r == 1:
+            print("You found a chest! ")
+            play.openChest()
 
 if __name__ == "__main__":
     act = Actions()
-    player = Player.Player("Hero", 10, 100, 5, 10, 0.2, "Warrior")  # Example player initialization
-    act.mainAction(player)  # Pass the player instance to mainAction
+    player = Player.Player("Hero", 10, 100, 5, 10, 0.2, "Warrior", maxHealth = 100)
+    act.mainAction(player)

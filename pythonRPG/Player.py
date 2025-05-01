@@ -4,10 +4,11 @@ import random
 import Armory
 
 class Player:
-    def __init__(self, name, attack, health, armorPen, armor, critChance, type):
+    def __init__(self, name, attack, health, armorPen, armor, critChance, type, maxHealth):
         self.name = name
         self.attack = attack
         self.health = health
+        self.maxHealth = maxHealth
         self.armorPen = armorPen
         self.energy = 100
         self.armor = armor
@@ -28,8 +29,21 @@ class Player:
         self.skills = []
     
     def updateStats(self):
-        self.armor = ((self.helmet.armor if self.helmet else 0) + (self.chestplate.armor if self.chestplate else 0) + (self.leggings.armor if self.leggings else 0) + (self.boots.armor if self.boots else 0))
+        self.armor = self.armor + ((self.helmet.armor if self.helmet else 0) + (self.chestplate.armor if self.chestplate else 0) + (self.leggings.armor if self.leggings else 0) + (self.boots.armor if self.boots else 0))
         self.attack = self.attack + (self.weapon.attack if self.weapon else 0)
+        self.armorPen = self.armorPen + (self.weapon.armorPen if self.weapon else 0)
+    def decay(self):
+        self.hunger += 3
+        self.energy -= 3
+        if self.hunger >= 100:
+            print("You've died of hunger!") 
+            self.alive = False
+        elif self.energy <= 0:
+            print("You've died of exhaustion!")
+            self.alive = False
+        else:
+            self.alive = True
+
     def start(self):
         print("Welcome to the python RPG game!")
         self.type = input("Please select a type of character: \n1. Warrior(Attacker)\n2. Knight(Tank)\n>")
@@ -41,6 +55,7 @@ class Player:
                 self.armor = 5
                 self.critChance = 0.1
                 self.type = "Warrior"
+                self.maxHealth = 100
                 print("You chose the warrior class!")
             case "2":
                 self.attack = 5
@@ -49,6 +64,7 @@ class Player:
                 self.armor = 10
                 self.critChance = 0.05
                 self.type = "Knight"
+                self.maxHealth = 150
                 print("You chose the knight class!")
     
     def addToInv(self, item):
@@ -112,6 +128,8 @@ class Player:
                 choice = input("Do you want to...\n\t1. Attack\n\t2. Use an item\n\t3. Use skill\n\t4. run\n> ").lower()
                 #Incorporate skills, items
                 if choice == "attack" or choice == "1":
+                    self.hunger += 1
+                    self.engergy -= 1
                     if random.random() < self.critChance:
                         print("Critical hit!")
                         damage = max(0, (self.attack * 2) - (enemy.armor - self.armorPen))
