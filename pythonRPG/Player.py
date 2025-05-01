@@ -26,7 +26,10 @@ class Player:
         self.leggings = None
         self.boots = None
         self.skills = []
-
+    
+    def updateStats(self):
+        self.armor = ((self.helmet.armor if self.helmet else 0) + (self.chestplate.armor if self.chestplate else 0) + (self.leggings.armor if self.leggings else 0) + (self.boots.armor if self.boots else 0))
+        self.attack = self.attack + (self.weapon.attack if self.weapon else 0)
     def start(self):
         print("Welcome to the python RPG game!")
         self.type = input("Please select a type of character: \n1. Warrior(Attacker)\n2. Knight(Tank)\n>")
@@ -90,7 +93,7 @@ class Player:
             
     def toString(self):
         print(f"Level: {self.level}\nAttack: {self.attack}\nHealth: {self.health}\nArmor Pen: {self.armorPen}\nArmor: {self.armor}\nCrit Chance: {self.critChance}\nType: {self.type}\nExp: {self.exp}\nGold: {self.gold}\nAlive: {self.alive}")
-
+    
     def battle(self):
         enemy = BaseEntity.createEntity()
         if not enemy:
@@ -107,16 +110,14 @@ class Player:
                 break
             else:
                 choice = input("Do you want to...\n\t1. Attack\n\t2. Use an item\n\t3. Use skill\n\t4. run\n> ").lower()
-                #Incorporate skills, items, and critical hits
-                if choice == "attack":
+                #Incorporate skills, items
+                if choice == "attack" or choice == "1":
                     if random.random() < self.critChance:
                         print("Critical hit!")
                         damage = max(0, (self.attack * 2) - (enemy.armor - self.armorPen))
                     else:
                         damage = max(0, self.attack - (enemy.armor - self.armorPen))
                     print(f"You attack the {enemy.name} for {damage} damage!")
-                    enemy.health -= damage
-                    print(f"Enemy health: {enemy.health}")
                     if enemy.health <= 0:
                         print(f"You defeated the {enemy.name}!")
                         print(f"You gained {enemy.expGive} exp and 10 gold!")
@@ -124,6 +125,8 @@ class Player:
                         self.gold += 10
                         break
                     else:
+                        enemy.health -= damage
+                        print(f"Enemy health: {enemy.health}")
                         if random.random() < enemy.critChance:
                             print("The enemy lands a critical hit!")
                             enemy_damage = max(0, (enemy.attack * 2) - (self.armor - enemy.armorPen))
@@ -136,7 +139,7 @@ class Player:
                     print("You use an item (not implemented yet).")
                 elif "skill" in choice:
                     print("You use a skill (not implemented yet).")
-                elif choice == "run":
+                elif choice == "run" or choice == "4":
                     print("You run away!")
                     del enemy
                     break

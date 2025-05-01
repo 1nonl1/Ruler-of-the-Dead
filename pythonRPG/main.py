@@ -24,5 +24,6 @@ if __name__ == "__main__":
     while player.alive == True:
         main()
         inv.checkInvFull()
-        env.nextDay()
+        env.checkOutside()
+        act.endTurn = False
     

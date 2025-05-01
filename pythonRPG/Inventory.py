@@ -79,6 +79,7 @@ class Inventory:
                         print(f"You already have boots equipped.")
                 case _:
                     print("This item cannot be equipped.")
+        self.player.updateStats()
 
     def checkEquipped(self):
         print("Weapon equipped" if self.player.weapon is not None else "No weapon equipped")
@@ -88,7 +89,6 @@ class Inventory:
         print("Boots equipped" if self.player.boots is not None else "No boots equipped")
 
     def duplicateItems(self):
-        """Renames duplicate items in the inventory by appending a number to their names."""
         item_groups = {}
         for item in self.items:
             if item.name not in item_groups:
