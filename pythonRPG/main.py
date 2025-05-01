@@ -1,10 +1,9 @@
-import Actions, Enviornment, Player, Inventory
+import Actions, Enviornment, Player, Inventory, os
 from Armory import Weapon
 from Items import BaseFood
 import pickle
+import RetreiveSave
 
-#Add teamates for later on in Team.py
-#They will help you fight enemies and other various tasks.
 def initialize():
     global env, act, player, inv
     env = Enviornment.Enviornment()
@@ -24,10 +23,17 @@ def save():
 
 if __name__ == "__main__":
     initialize()
-    play = player.start()
+    if os.path.exists('saveFile.pkl'):
+        RetreiveSave.getSave()
+        global player, env, inv
+        player = RetreiveSave.player
+        env = RetreiveSave.env
+        inv = RetreiveSave.inv
+    else:
+        play = player.start()
     while player.alive == True:
         main()
         env.checkOutside()
+        env.nextDay()
         act.endTurn = False
         save()
-    

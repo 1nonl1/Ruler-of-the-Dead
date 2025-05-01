@@ -108,7 +108,7 @@ class Player:
             print(f"You need {self.expNeeded - self.exp} more exp to level up!")
             
     def toString(self):
-        print(f"Level: {self.level}\nAttack: {self.attack}\nHealth: {self.health}\nArmor Pen: {self.armorPen}\nArmor: {self.armor}\nCrit Chance: {self.critChance}\nType: {self.type}\nExp: {self.exp}\nGold: {self.gold}\nAlive: {self.alive}")
+        print(f"Level: {self.level}\nAttack: {self.attack}\nHealth: {self.health}\nArmor Pen: {self.armorPen}\nArmor: {self.armor}\nCrit Chance: {self.critChance}\nType: {self.type}\nExp: {self.exp}\nGold: {self.gold}\n")
     
     def battle(self):
         enemy = BaseEntity.createEntity()
