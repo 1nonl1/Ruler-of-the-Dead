@@ -17,9 +17,10 @@ But first, some information on how to [install](#installation) and set up the ga
 
 ## Installation
 ### Installing via Command Line
-> 1. Type: `git clone (Insert link here)` in your preferred directory.
-> 2. Then type `python main.py`
-> 3. Enjoy the game!
+> 1. Type: `git clone https://github.com/1nonl1/dungeonRPG.git` in your preferred directory.
+> 2. `cd dungeonRPG` to change directory
+> 3. Then type `python main.py`
+> 4. Enjoy the game!
 
 ### Installing via zip
 > 1. Download the zip file from GitHub
@@ -28,10 +29,10 @@ But first, some information on how to [install](#installation) and set up the ga
 > 4. Enjoy the game!
 
 ## Game Lore
-If you have seen the anime series _That Time I Got Reincarnated As A Slime_ and _Sword Art Online_, you will realize it relates a lot to these series.\
-It is a normal day on Earth, you are talking to your friend in a crowded city. Suddenly, you hear many people screaming. You see someone with a weapon in their hand and they unalive you. You wake up in a place unknown, not like Earth, with many creatures like Slimes, Ogres, and other creatures. This is your life now. After a while of making a base and hunting, you spot a cave in the distance, its mouth gaping like a dark invitation. Before you can enter, though, you need to gather essential supplies—perhaps a sturdy branch or some healing herbs—to prepare for the unknown challenges. With determination, you set off to explore your surroundings.
+If you have seen the anime series _That Time I Got Reincarnated As A Slime_ and _Sword Art Online_, you will realize it relates a little to these series.\
+It is a normal day on Earth, you are talking to your friend in a crowded city. Suddenly, you hear many people screaming. You see someone with a weapon in their hand, and they kill you. You wake up in a place unknown, not like Earth, with many creatures like Slimes, Ogres, and other creatures. This is your life now. After a while of making a base and hunting, you spot a cave in the distance, its mouth gaping like a dark invitation. Before you can enter, though, you need to gather essential supplies—perhaps a sturdy branch or some healing herbs—to prepare for the unknown challenges. With determination, you set off to explore your surroundings.
 
-You find out that there are good and bad creatures and plants. When you defeat creatures, you feel stronger. After eliminating 32 creatures, you see words in front of your vision, **New Skill Gained: Looter, Increases loot dropped**. You also gain a sword and some armor. Before you've been eliminating docile creatures, like bunnies and slimes. But now you killed your first low-level creature, and when eliminated it dropped a sword and armor.
+You find out that there are good and bad creatures and plants. When you defeat creatures, you feel stronger. After eliminating 32 creatures, you see words in front of your vision, **New Skill Gained: Looter, Increases loot dropped**. You also gain a sword and some armor. Before you've been eliminating docile creatures, like bunnies and slimes. But now you have killed your first low-level creature, and when eliminated, it dropped a sword and armor.
 
 [//]:#Info-on-entities
 [//]:#Info-on-armor-and-weapons
@@ -49,8 +50,6 @@ You find out that there are good and bad creatures and plants. When you defeat c
     5. view_inv (Views your current inventory)
     6. equip_item (Prints out the items in your inventory. Type the name of the item you want)
     7. show_equipItems (Shows your currently equipped items)
-> [!WARNING]
-> Miss typing a command at any point in the code may cause you to lose a turn!
 
 ## Creator Notes
 [//]:#Mention-contributors
