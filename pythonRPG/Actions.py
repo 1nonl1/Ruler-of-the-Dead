@@ -3,7 +3,7 @@ import Player
 
 class Actions:
     def __init__(self):
-        self.dailyActions = ["use_item", "scavenge", "rest", "check_stats", "view_inv", "equip_item", "show_equipItems"]
+        self.dailyActions = ["use_item", "scavenge", "rest", "check_stats", "view_inv", "equip_item", "show_equipItems", "commands"]
         self.endTurn = False
 
     def mainAction(self, player):
@@ -38,6 +38,9 @@ class Actions:
                         player.inv.askEquipItem()
                     case "show_equipItems":
                         player.inv.showEquipItems()
+                    case "commands":
+                        for index, action in enumerate(self.dailyActions):
+                            print(f"{index + 1}. {action}")
                         
             else:
                 print("Invalid action!")
