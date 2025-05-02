@@ -39,5 +39,5 @@ class Miscellaneous:
     class Hiraecrystal(BaseMiscellaneous):
         def __init__(self):
             super().__init__("Hiraecrystal", "A very rare crystal that can either be traded in for currency or upgrading a godly type weapon.")
-f = BaseFood("Hi", 1, 1, "Hello")
+f = Food.Berry()
 f.makeFood()
