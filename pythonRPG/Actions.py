@@ -49,6 +49,8 @@ class Actions:
         if r == 1:
             print("You found a chest! ")
             play.openChest()
+        #else:
+        #Create random items, mostly food. And for each food, add to exp.
 
 if __name__ == "__main__":
     act = Actions()

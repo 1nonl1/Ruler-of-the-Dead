@@ -76,6 +76,16 @@ class BaseArmor:
 
         if lvl == "common":
             armorName, armorRarity = random.choice(list(commonArmor.items()))
+        elif lvl == "uncommon":
+            armorName, armorRarity = random.choice(list(uncommonArmor.items()))
+        elif lvl == "rare":
+            armorName, armorRarity = random.choice(list(rareArmor.items()))
+        elif lvl == "epic":
+            armorName, armorRarity = random.choice(list(epicArmor.items()))
+        elif lvl == "legendary":
+            armorName, armorRarity = random.choice(list(legendaryArmor.items()))
+        elif lvl == "godly":
+            armorName, armorRarity = random.choice(list(godlyArmor.items()))
         else:
             return None
         return armorRarity()
