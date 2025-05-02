@@ -17,7 +17,7 @@ class BaseEntity:
         lowLevelEntities = {"wolf": Entities.lowLevel.Wolf, "spider": Entities.lowLevel.Spider}
         midLevelEntities = {"ogre": Entities.midLevel.Ogre}
         highLevelEntities = {"dragon": Entities.highLevel.Dragon}
-        mythicalEntities = {"dood": Entities.Mythical.Dood, "Horretarako": Entities.Mythical.Horretarako}
+        mythicalEntities = {"dood": Entities.Mythical.Dood, "horretarako": Entities.Mythical.Horretarako, "onsabi": Entities.Mythical.Onsabi}
 
         if level == "lowLevel":
             entityName, entityClass = random.choice(list(lowLevelEntities.items()))
@@ -64,7 +64,10 @@ class Entities: #The stats of the entities go up bases on the player level
     class Mythical:
         class Dood(BaseEntity):
             def __init__(self):
-                super().__init__(attack = 10000, health = 5000, armorPen = 70, armor = 80, critChance = 0.8, expGive = 100000, name = "Dood")
+                super().__init__(attack = 10000, health = 40000, armorPen = 70, armor = 80, critChance = 0.8, expGive = 100000, name = "Dood")
         class Horretarako(BaseEntity):
             def __init__(self):
-                super().__init__(attack = 500, health = 10000, armorPen = 90, armor = 95, critChance = 0.5, expGive = 100000, name = "Horretarko")
+                super().__init__(attack = 1000, health = 70000, armorPen = 90, armor = 95, critChance = 0.5, expGive = 100000, name = "Horretarko")
+        class Onsabi(BaseEntity):
+            def __init__(self):
+                super().__init__(attack = 2000, health = 90000, armorPen = 90, armor = 95, critChance = 0.5, expGive = 100000, name = "Onsabi")

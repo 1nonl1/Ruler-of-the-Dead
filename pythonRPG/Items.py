@@ -12,8 +12,9 @@ class BaseFood:
     @classmethod
     def makeFood(cls):
         foodDict = {'berry': Food.Berry, 'meat': Food.Meat}
-        food = random.choice(list(foodDict.items()))
+        food = random.choice(list(foodDict.values()))
         return food()
+        
 
 class BasePotion:
     def __init__(self, name, duration, effect, description): #effect is how strong it is like for heal, the effect is how much it heals
@@ -39,5 +40,3 @@ class Miscellaneous:
     class Hiraecrystal(BaseMiscellaneous):
         def __init__(self):
             super().__init__("Hiraecrystal", "A very rare crystal that can either be traded in for currency or upgrading a godly type weapon.")
-f = Food.Berry()
-f.makeFood()

@@ -8,6 +8,7 @@ class Player:
         self.name = name
         self.attack = attack
         self.health = health
+        self.totalAttack = 0
         self.maxHealth = maxHealth
         self.armorPen = armorPen
         self.energy = 100
@@ -109,7 +110,8 @@ class Player:
             
     def toString(self):
         print(f"Level: {self.level}\nAttack: {self.attack}\nHealth: {self.health}\nArmor Pen: {self.armorPen}\nArmor: {self.armor}\nCrit Chance: {self.critChance}\nType: {self.type}\nExp: {self.exp}\nGold: {self.gold}\n")
-    
+    def lifeTimeStats(self):
+        print(f"Total Damage Dealt: {self.totalAttack}")
     def battle(self):
         enemy = BaseEntity.createEntity()
         if not enemy:
@@ -135,6 +137,7 @@ class Player:
                         damage = max(0, (self.attack * 2) - (enemy.armor - self.armorPen))
                     else:
                         damage = max(0, self.attack - (enemy.armor - self.armorPen))
+                    self.totalAttack += damage
                     print(f"You attack the {enemy.name} for {damage} damage!")
                     if enemy.health <= 0:
                         print(f"You defeated the {enemy.name}!")

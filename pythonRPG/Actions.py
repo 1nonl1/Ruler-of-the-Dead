@@ -3,7 +3,7 @@ import Player
 
 class Actions:
     def __init__(self):
-        self.dailyActions = ["use_item", "scavenge", "rest", "check_stats", "view_inv", "equip_item", "show_equipItems", "commands"]
+        self.dailyActions = ["description","use_item", "scavenge", "rest", "check_stats", "check_lifeStats", "view_inv", "equip_item", "show_equipItems", "commands"]
         self.endTurn = False
 
     def mainAction(self, player):
@@ -11,6 +11,8 @@ class Actions:
             self.action = input("What do you want to do? ")
             if self.action in self.dailyActions:
                 match self.action:
+                    case "description":
+                        print("Under development")
                     case "use_item":
                         print("You use an item!")
                     case "scavenge":
@@ -18,7 +20,7 @@ class Actions:
                         r = random.randint(0, 1)
                         if r == 1:
                             print("You found an enemy!")
-                            player.battle()  # Call the battle method on the player instance
+                            player.battle()
                         elif r == 0:
                             print("You found some loot!")
                             self.scavenge(player)
@@ -31,7 +33,9 @@ class Actions:
                         print(f"You gained {heal} health!")
                         self.endTurn = True
                     case "check_stats":
-                        player.toString()  # Call the toString method on the player instance
+                        player.toString()
+                    case "check_lifeStats":
+                        player.lifeTimeStats()
                     case "view_inv":
                         player.showInv()
                     case "equip_item":
