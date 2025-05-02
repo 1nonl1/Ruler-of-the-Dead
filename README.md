@@ -6,12 +6,13 @@
 
 Welcome to the Dungeon RPG game in Python terminal! If you have any suggestions for the game, join my Discord server! This guide shows you the commands to play the game, and a little on how the game works.
 It will also include some...
-> - [game lore](#game-lore)
+> - [Game lore](#game-lore)
+> - [Game commands](#game-commands)
 > - [Game Info](#game-info)
 >     - [information on entities](#info-on-entities)
 >     - [information on armor and weapons](#info-on-armor-and-weapons)
 >     - [information on items in the game](#info-on-items)
-> - and tips
+> - and [Tips](#tips)
 
 [//]:#
 But first, some information on how to [install](#installation) and set up the game!
@@ -34,14 +35,6 @@ It is a normal day on Earth, you are talking to your friend in a crowded city. S
 
 You find out that there are good and bad creatures and plants. When you defeat creatures, you feel stronger. After eliminating 32 creatures, you see words in front of your vision, **New Skill Gained: Looter, Increases loot dropped**. You also gain a sword and some armor. Before you've been eliminating docile creatures, like bunnies and slimes. But now you have killed your first low-level creature, and when eliminated, it dropped a sword and armor.
 
-[//]:#Info-on-entities
-[//]:#Info-on-armor-and-weapons
-[//]:#Info-on-Items
-[//]:#tips
-## Game Info
-### Info on Entities
-### Info on Armor and Weapons
-### Info on Items
 ## Game Commands
 > [!WARNING]
 > You must `rest` in order to **save** and progress to the next day!
@@ -53,6 +46,14 @@ You find out that there are good and bad creatures and plants. When you defeat c
 > * view_inv (Views your current inventory)
 > * equip_item (Prints out the items in your inventory. Type the name of the item you want)
 > * show_equipItems (Shows your currently equipped items)
+
+## Game Info
+### Info on Entities
+### Info on Armor and Weapons
+#### Weapons
+#### Armor
+### Info on Items
+## Tips
 
 ## Creator Notes
 [//]:#Mention-contributors
