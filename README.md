@@ -1,4 +1,4 @@
-# <div align = "center">Ruler of the Dead<p align = "center"><br><img src = "http://ForTheBadge.com/images/badges/made-with-python.svg" alt = "badge"></p></div>
+# <div align = "center">Ruler of the Dead<p align = "center"><br><a href = "https://www.python.org/"><img src = "http://ForTheBadge.com/images/badges/made-with-python.svg" alt = "badge"></a></p></div>
 <p align = "center">
     <img src = "https://img.shields.io/badge/Base_Game_Completion_Estimate-50%25-blue" alt = "badge">
     <img src = "https://img.shields.io/badge/License-MIT-orange" alt = "badge">
