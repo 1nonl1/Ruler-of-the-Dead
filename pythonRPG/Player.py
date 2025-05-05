@@ -1,6 +1,6 @@
 from Entities import BaseEntity
 from Inventory import Inventory
-import random
+import random, math
 import Armory
 
 class Player:
@@ -22,6 +22,7 @@ class Player:
         self.hunger = 0
         self.invCapacity = 30
         self.inv = Inventory(self)
+        self.enemy = BaseEntity(self)
         self.weapon = None
         self.helmet = None
         self.chestplate = None
@@ -72,6 +73,9 @@ class Player:
         self.inv.addItem(item)
     def showInv(self):
         self.inv.showInventory()
+    def increaseEntityStats(self, entity):
+        entity.attack = math.ceil(entity.attack + (self.level * math.sin(2)))
+        entity.health = math.ceil(entity.health + (self.level * math.cos(1)))
 
     def openChest(self):
         self.numOfItems = random.randint(3, 10)
@@ -112,8 +116,10 @@ class Player:
         print(f"Level: {self.level}\nAttack: {self.attack}\nHealth: {self.health}\nArmor Pen: {self.armorPen}\nArmor: {self.armor}\nCrit Chance: {self.critChance}\nType: {self.type}\nExp: {self.exp}\nGold: {self.gold}\n")
     def lifeTimeStats(self):
         print(f"Total Damage Dealt: {self.totalAttack}")
+        #add total damage taken
     def battle(self):
         enemy = BaseEntity.createEntity()
+        self.increaseEntityStats(enemy)
         if not enemy:
             print("No enemy was created!")
             return 

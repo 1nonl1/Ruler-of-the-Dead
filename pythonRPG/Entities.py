@@ -1,4 +1,5 @@
-import random
+import random, math
+# Removed Player import to avoid circular import issues
 
 class BaseEntity:
     def __init__(self, attack, health, armorPen, armor, critChance, expGive, name):
@@ -31,7 +32,7 @@ class BaseEntity:
             return None
         return entityClass()
 
-
+# + (Player.level * math.sin(2))
 class Entities: #The stats of the entities go up bases on the player level
     class lowLevel:
         class Wolf(BaseEntity):

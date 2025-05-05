@@ -100,5 +100,6 @@ class Inventory:
                 for i, item in enumerate(items, start=1):
                     item.name = f"{base_name}{i}"
                     print(f"Renamed item: {item.name}")
+            
 
 
