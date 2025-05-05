@@ -1,7 +1,7 @@
 # <div align = "center">Ruler of the Dead<p align = "center"><br><a href = "https://www.python.org/"><img src = "http://ForTheBadge.com/images/badges/made-with-python.svg" alt = "badge"></a></p></div>
 <p align = "center">
     <img src = "https://img.shields.io/badge/Base_Game_Completion_Estimate-50%25-blue" alt = "badge">
-    <img src = "https://img.shields.io/badge/License-MIT-orange" alt = "badge">
+    <a href = "https://github.com/1nonl1/dungeonRPG/blob/39647fdb7b704e89a27c39187223ccc1a7b99154/LICENSE"><img src = "https://img.shields.io/badge/License-MIT-orange" alt = "badge"></a>
 </p>
 
 Welcome to the Dungeon RPG game in Python terminal! If you have any suggestions for the game, join my Discord server! This guide shows you the commands to play the game, and a little on how the game works.
