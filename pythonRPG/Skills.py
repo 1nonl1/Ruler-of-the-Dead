@@ -41,20 +41,23 @@ class Skills:
         class Dopleganger(BaseSkill):
             def __init__(self):
                 super().__init__(name = "Doppleganger", type = "Active", description = "Creates clones around the enemy confusing it and missing the player the next 2 turns.", coolDown = 6)
+    
     class MidClassSkills:
         class Incinerate(BaseSkill):
             def __init__(self):
                 super().__init__(name = "Incinerate", type = "Active", description = "Burns the enemy for 3 turns, dealing 10% of their max health as damage each turn.", coolDown = 5)
         class DoubleWield(BaseSkill):
             def __init__(self):
-                super().__init__(name = "Double Weild", type = "Passive", description = "Allows you to equip 2 weapons at once.", coolDown = 0)
+                super().__init__(name = "Double Wield", type = "Passive", description = "Allows you to equip 2 weapons at once.", coolDown = 0)
         class Shiver(BaseSkill):
             def __init__(self):
                 super().__init__(name = "Shiver", type = "Active", description = "Freezes the enemy for 2 turns, preventing them from attacking.", coolDown = 4)
+    
     class HighClassSkills:
         class Overdrive(BaseSkill):
             def __init__(self):
                 super().__init__(name = "Overdrive", type = "Passive", description = "Increases all base stats by 10. Excluding critical chance", coolDown = 0)
+    
     class GodlySkills:
         class Disintegrate(BaseSkill):
             def __init__(self):

@@ -4,7 +4,7 @@ from Items import Food
 
 class Actions:
     def __init__(self):
-        self.dailyActions = ["description","use_item", "scavenge", "rest", "check_stats", "check_lifeStats", "view_inv", "equip_item", "show_equipItems", "commands"]
+        self.dailyActions = ["description","use_item", "scavenge", "rest", "check_stats", "check_lifeStats", "view_inv", "equip_item", "show_equipItems", "--help"]
         self.endTurn = False
 
     def mainAction(self, player):
@@ -42,15 +42,15 @@ class Actions:
                     case "equip_item":
                         player.inv.askEquipItem()
                     case "show_equipItems":
-                        player.inv.showEquipItems()
-                    case "commands":
+                        player.inv.checkEquipped()
+                    case "--help":
                         for index, action in enumerate(self.dailyActions):
                             print(f"{index + 1}. {action}")
                         
             else:
                 print("Invalid action!")
     def scavenge(self, play):
-        if random.random() < 40:
+        if random.random() < 30:
             print("You found a chest! ")
             play.openChest()
         else:

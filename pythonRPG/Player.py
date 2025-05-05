@@ -27,6 +27,7 @@ class Player:
         self.chestplate = None
         self.leggings = None
         self.boots = None
+        self.battleTurn = 0
         self.skills = []
     
     def updateStats(self):
@@ -117,16 +118,48 @@ class Player:
     def lifeTimeStats(self):
         print(f"Total Damage Dealt: {self.totalAttack}")
         #add total damage taken
+    
+    def useSkill(self, skill, enemy):#Only for active skills
+        match skill.name:
+            case "Hollow Scream":
+                print("You scream loudly, scaring the enemy!")
+                del enemy
+                return
+            case "Beserk":
+                CURRENT_TURN = self.battleTurn
+                print("You go into a rage, increasing your attack by 30% for 3 turns!")
+                """
+                PREV_ATTACK = self.attack
+                effectDuration = 3
+                while effectDuration > 0:
+                    self.attack = self.attack + math.ceil(self.attack * 0.3)
+                self.attack = PREV_ATTACK
+                """
+            case "Doppleganger":
+                print("You create clones around the enemy, confusing it and making it miss the next 2 turns!")
+            case "Incinerate":
+                print("You burn the enemy for 3 turns, dealing 10% of their max health as damage each turn!")
+            case "Shiver":
+                print("You freeze the enemy for 2 turns!")
+            case "Disintegrate":
+                print("You disintegrate the enemy, instantly killing it!")
+                del enemy
+                return
+                
+                
+                
+            
     def battle(self):
         enemy = BaseEntity.createEntity()
         self.increaseEntityStats(enemy)
         if not enemy:
             print("No enemy was created!")
-            return 
+            return
 
         print(f"You encounter a {enemy.name}!")
         print(f"Enemy stats: Attack: {enemy.attack}, Health: {enemy.health}, Armor Pen: {enemy.armorPen}, Armor: {enemy.armor}")
         print(f"Player stats: Attack: {self.attack}, Health: {self.health}, Armor Pen: {self.armorPen}, Armor: {self.armor}")
+        self.battleTurn = 0
         while enemy.health > 0:
             if self.health <= 0:
                 print("You have been defeated!")
@@ -134,10 +167,11 @@ class Player:
                 break
             else:
                 choice = input("Do you want to...\n\t1. Attack\n\t2. Use an item\n\t3. Use skill\n\t4. run\n> ").lower()
-                #Incorporate skills, items
+                #Incorporate items
                 if choice == "attack" or choice == "1":
                     self.hunger += 1
                     self.energy -= 1
+                    self.battleTurn += 1
                     if random.random() < self.critChance:
                         print("Critical hit!")
                         damage = max(0, (self.attack * 2) - (enemy.armor - self.armorPen))
@@ -165,10 +199,15 @@ class Player:
                 elif "item" in choice:
                     print("You use an item (not implemented yet).")
                 elif "skill" in choice:
-                    print("You use a skill (not implemented yet).")
+                    for i, skill in enumerate(self.skills):
+                        print(f"{i + 1}. {skill.name}")
+                    chooseSkill = input("What skill would you like to use? ")
+                    if chooseSkill in self.skills:
+                        self.useSkill(chooseSkill, enemy)
                 elif choice == "run" or choice == "4":
                     print("You run away!")
                     del enemy
                     break
                 else:
                     print("Invalid choice!")
+                    

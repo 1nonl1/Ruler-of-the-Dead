@@ -57,6 +57,16 @@ class Inventory:
         if item in self.items:
             if item.type == "Food" or "Potion" or "Other":
                 print(item.description)
+            elif item.type == "weapon":
+                print(f"Weapon: {item.name}, Attack: {item.attack}, Durability: {item.durability}, Rarity: {item.rarity}")
+            elif item.type == "helmet":
+                print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
+            elif item.type == "chestplate":
+                print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
+            elif item.type == "leggings":
+                print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
+            elif item.type == "boots":
+                print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
             else:
                 print("Not a type!")
     def equipItem(self, item):

@@ -4,11 +4,22 @@ from Player import Player
 from Inventory import Inventory
 from Armory import BaseWeapon, BaseArmor
 from Entities import BaseEntity
+from Actions import *
+from Armory import *
+from Entities import *
+from Enviornment import *
+from Inventory import *
+from Items import *
+from main import *
+from RetreiveSave import *
+from Skills import *
+from Team import *
+from Upgrade import *
 
 class TestPlayer(unittest.TestCase):
 
     def setUp(self):
-        self.player = Player(name="TestPlayer", attack=10, health=100, armorPen=5, armor=10, critChance=0.1, type="Warrior")
+        self.player = Player(name="TestPlayer", attack=10, health=100, armorPen=5, armor=10, critChance=0.1, type="Warrior", maxHealth=100)
 
     def test_initialization(self):
         self.assertEqual(self.player.name, "TestPlayer")
@@ -73,6 +84,50 @@ class TestPlayer(unittest.TestCase):
         self.player.battle()
         self.assertTrue(self.player.alive)
         self.assertGreaterEqual(self.player.exp, 0)
+
+class TestActions(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
+
+class TestArmory(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
+
+class TestEntities(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
+
+class TestEnviornment(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
+
+class TestInventory(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
+
+class TestItems(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
+
+class TestMain(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
+
+class TestRetreiveSave(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
+
+class TestSkills(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
+
+class TestTeam(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
+
+class TestUpgrade(unittest.TestCase):
+    def test_placeholder(self):
+        self.assertTrue(True)
 
 if __name__ == '__main__':
     unittest.main()
