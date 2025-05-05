@@ -19,6 +19,7 @@ But first, some information on how to [install](#installation) and set up the ga
 
 ## Installation
 ### Installing via Command Line
+**Downloading python with Debian Linux: `sudo apt install python3`**
 > 1. Type: `git clone https://github.com/1nonl1/Ruler-of-the-Dead.git` in your preferred directory.
 > 2. `cd dungeonRPG` to change directory
 > 3. Then type `python main.py`
