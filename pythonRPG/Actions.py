@@ -1,5 +1,6 @@
 import random
 import Player
+from Items import Food
 
 class Actions:
     def __init__(self):
@@ -12,7 +13,7 @@ class Actions:
             if self.action in self.dailyActions:
                 match self.action:
                     case "description":
-                        print("Under development")
+                        player.itemInfo()
                     case "use_item":
                         print("You use an item!")
                     case "scavenge":
@@ -49,11 +50,11 @@ class Actions:
             else:
                 print("Invalid action!")
     def scavenge(self, play):
-        r = random.randint(0, 10)
-        if r == 1:
+        if random.random() < 40:
             print("You found a chest! ")
             play.openChest()
-        #else:
+        else:
+            play.exp += 10
         #Create random items, mostly food. And for each food, add to exp.
 
 if __name__ == "__main__":

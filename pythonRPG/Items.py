@@ -1,13 +1,11 @@
-#Base Class for potions
-#Base Class for food
-#Base class for various items like gold, sticks, etc.
 import random
 class BaseFood:
-    def __init__(self, name, hungPoints, expAdd, description):
+    def __init__(self, name, hungPoints, expAdd, description, type):
         self.name = name
         self.hungerPoints = hungPoints
         self.expAdd = expAdd
         self.description = description
+        self.type = "Food"
     
     @classmethod
     def makeFood(cls):
@@ -17,16 +15,18 @@ class BaseFood:
         
 
 class BasePotion:
-    def __init__(self, name, duration, effect, description): #effect is how strong it is like for heal, the effect is how much it heals
+    def __init__(self, name, duration, effect, description, type): #effect is how strong it is like for heal, the effect is how much it heals
         self.name = name
         self.duration = duration
         self.effect = effect
         self.description = description
+        self.type = "Potion"
         
 class BaseMiscellaneous:
-    def __init__(self, name, description):
+    def __init__(self, name, description, type):
         self.name = name
         self.description = description
+        self.type = "Other"
 #Add Hiraecrystal
 class Food:
     class Berry(BaseFood):

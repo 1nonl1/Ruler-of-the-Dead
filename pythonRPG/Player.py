@@ -22,7 +22,6 @@ class Player:
         self.hunger = 0
         self.invCapacity = 30
         self.inv = Inventory(self)
-        self.enemy = BaseEntity(self)
         self.weapon = None
         self.helmet = None
         self.chestplate = None
@@ -76,7 +75,8 @@ class Player:
     def increaseEntityStats(self, entity):
         entity.attack = math.ceil(entity.attack + (self.level * math.sin(2)))
         entity.health = math.ceil(entity.health + (self.level * math.cos(1)))
-
+    def itemInfo(self):
+        self.inv.getDescription()
     def openChest(self):
         self.numOfItems = random.randint(3, 10)
         for i in range(self.numOfItems):
