@@ -5,9 +5,24 @@ class Enviornment:
         self.floor = 0
         self.weather = ""
     
-    def changeFloor(self, bossKilled):
+    def changeFloor(self, bossKilled, team):
         if bossKilled == False:
             pass
+        elif floor == 1000 and bossKilled == True:
+            print("You've come a long way! ")
+            print("You've defeated the final boss!")
+            if team == True:
+                print("As you start to celebrate with your team, you start to feel something surging inside you.")
+                print("It feels as though `fjpabkwp uzj jbfakkbjwu az jokh`.")
+                print("Before you know it, you lash out at your team.")
+                print("You `Ghhh uhbb` before they can even react!")
+                print("`Ku zjjhg hkgj cady fakc kg aw zkyj xg cady ggkw udywg yjk, xwk cad pyae x zayw`")
+                print("`Fjn xed kqd Enide ju kqd Odxo`")
+            else:
+                print("As you start to celebrate you start to feel something surging inside you.")
+                print("It feels as though you are `fjpabkwp uzj jbfakkbjwu az jokh`.")
+                print("`Ku zjjhg hkgj cady fakc kg aw zkyj xg cady ggkw udywg yjk, xwk cad pyae x zayw`")
+                print("`Fjn xed kqd Enide ju kqd Odxo`")
         elif bossKilled == True:
             print(f"You have made it to floor {self.floor}!")
             floor += 1
