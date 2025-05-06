@@ -126,7 +126,6 @@ class Player:
                 del enemy
                 return
             case "Beserk":
-                CURRENT_TURN = self.battleTurn
                 print("You go into a rage, increasing your attack by 30% for 3 turns!")
                 """
                 PREV_ATTACK = self.attack
