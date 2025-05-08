@@ -1,8 +1,8 @@
 import pickle, os
 import Actions, Enviornment, Player, Inventory
 def getSave():
-    if os.path.exists('saveFile.pkl'):
-        with open('saveFile.pkl', 'rb') as f:
+    if os.path.exists('pythonRPG/saveFile.pkl'):
+        with open('pythonRPG/saveFile.pkl', 'rb') as f:
             global env, player, inv
             env, player, inv = pickle.load(f)
     player.toString()
