@@ -20,6 +20,7 @@ def main():
 def save():
     with open('pythonRPG/saveFile.pkl', 'wb') as f:
         pickle.dump([env, player, inv], f)
+    os.chmod('pythonRPG/saveFile.pkl', 0o444)
 
 if __name__ == "__main__":
     initialize()
