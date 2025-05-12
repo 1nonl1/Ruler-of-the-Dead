@@ -7,6 +7,8 @@ def getSave():
             env, player, inv = pickle.load(f)
     except PermissionError:
         print("Permission ERROR: Unable to read the save file. Please report to repository discussion.")
+    except FileNotFoundError:
+        print("File Not Found")
     player.toString()
 if __name__ == '__main__':
     getSave()
