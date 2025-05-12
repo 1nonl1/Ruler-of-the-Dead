@@ -18,9 +18,10 @@ def main():
     inv.checkInvFull()
     player.decay()
 def save():
-    with open('pythonRPG/saveFile.pkl', 'wb') as f:
-        pickle.dump([env, player, inv], f)
-    os.chmod('pythonRPG/saveFile.pkl', 0o444)
+    if not os.path.exists('pythonRPG/saveFile.pkl'):
+        with open('pythonRPG/saveFile.pkl', 'wb') as f:
+            pickle.dump([env, player, inv], f)
+    os.chmod('pythonRPG/saveFile.pkl', 0o666)
 
 if __name__ == "__main__":
     initialize()
@@ -33,6 +34,8 @@ if __name__ == "__main__":
             inv = RetreiveSave.inv
     except PermissionError:
         print("PERMISSION ERROR! Please report error to the github repository admin.")
+    except FileNotFoundError:
+        print("File Not Found Error, please report error to the github repository.")
     else:
         play = player.start()
     while player.alive == True:
@@ -44,3 +47,5 @@ if __name__ == "__main__":
             save()
         except PermissionError:
             print("PERMISSION ERROR! Please report error to the github repository admin.")
+        except FileNotFoundError:
+            print("FileNotFoundError! There is not saveFile.pkl. Please report to the github repository admin")
