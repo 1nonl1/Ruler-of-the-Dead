@@ -20,10 +20,13 @@ def main():
     player.decay()
 
 def save():
-    # Ensure the save file is created if it doesn't exist
-    with open('pythonRPG/saveFile.pkl', 'wb') as f:
-        pickle.dump([env, player, inv], f)
-    os.chmod('pythonRPG/saveFile.pkl', 0o666)
+    # Ensure the save file is created with appropriate permissions
+    try:
+        with open('pythonRPG/saveFile.pkl', 'wb') as f:
+            pickle.dump([env, player, inv], f)
+        os.chmod('pythonRPG/saveFile.pkl', 0o666)  # Set read/write permissions for all users
+    except Exception as e:
+        print(f"Error saving the game: {e}")
 
 if __name__ == "__main__":
     if os.path.exists('pythonRPG/saveFile.pkl'):
@@ -54,6 +57,6 @@ if __name__ == "__main__":
         try:
             save()
         except PermissionError:
-            print("PERMISSION ERROR! Please report error to the GitHub repository admin.")
+            print("Permission error: Unable to save the game. Please check file permissions.")
         except FileNotFoundError:
-            print("FileNotFoundError! There is no saveFile.pkl. Please report to the GitHub repository admin.")
+            print("Save file not found. A new save file will be created on the next save attempt.")
