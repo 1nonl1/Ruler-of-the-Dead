@@ -20,7 +20,6 @@ def main():
     player.decay()
 
 def save():
-    # Ensure the save file is created with appropriate permissions
     try:
         with open('pythonRPG/saveFile.pkl', 'wb') as f:
             pickle.dump([env, player, inv], f)
