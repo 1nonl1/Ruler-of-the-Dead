@@ -2,7 +2,7 @@ import pickle, os
 import Actions, Enviornment, Player, Inventory
 def getSave():
     try:
-        with open('pythonRPG/saveFile.pkl', 'rb') as f:
+        with open('saveFile.pkl', 'rb') as f:
             global env, player, inv
             env, player, inv = pickle.load(f)
     except PermissionError:
