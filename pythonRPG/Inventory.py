@@ -43,22 +43,23 @@ class Inventory:
                 if item.name == choice:
                     self.equipItem(item)
                     return
-    def showDescription(self, item):
-        if item in self.items:
-            if item.TYPE == "Food" or "Potion" or "Other":
-                print(item.description)
-            elif item.TYPE == "weapon":
-                print(f"Weapon: {item.name}, Attack: {item.attack}, Durability: {item.durability}, Rarity: {item.rarity}")
-            elif item.TYPE == "helmet":
-                print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
-            elif item.TYPE == "chestplate":
-                print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
-            elif item.TYPE == "leggings":
-                print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
-            elif item.TYPE == "boots":
-                print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
-            else:
-                print("Not a type!")
+    def showDescription(self, itemName):
+        for item in self.items:
+            if self.item == itemName:
+                if item.TYPE == "Food" or "Potion" or "Other":
+                    print(item.description)
+                elif item.TYPE == "weapon":
+                    print(f"Weapon: {item.name}, Attack: {item.attack}, Durability: {item.durability}, Rarity: {item.rarity}")
+                elif item.TYPE == "helmet":
+                    print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
+                elif item.TYPE == "chestplate":
+                    print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
+                elif item.TYPE == "leggings":
+                    print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
+                elif item.TYPE == "boots":
+                    print(f"Name: {item.name}, Armor: {item.armor}, Durability: {item.durability}, Rarity: {item.rarity}")
+                else:
+                    print("Not a type!")
     def equipItem(self, item):
         if item in self.items:
             match item.type:
