@@ -40,12 +40,7 @@ if __name__ == "__main__":
             initialize()
     else:
         initialize()
-
-    try:
-        play = player.start()
-    except AttributeError:
-        print("Error: Player object not initialized correctly.")
-        exit(1)
+        player.start()
 
     while player.alive:
         main()
