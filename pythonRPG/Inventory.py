@@ -21,7 +21,7 @@ class Inventory:
         if not self.items:
             print("Your inventory is empty.")
         else:
-            for i, item in enumerate(self.items, start=1):
+            for i, item in enumerate(self.items, start = 1):
                 print(f"{i}. {item.name}, Rarity: {item.rarity}, Durability: {item.durability}")
 
     def checkInvFull(self):
@@ -45,7 +45,7 @@ class Inventory:
                     return
     def showDescription(self, item):
         if item in self.items:
-            if item.type == "Food" or "Potion" or "Other":
+            if item.TYPE == "Food" or "Potion" or "Other":
                 print(item.description)
             elif item.type == "weapon":
                 print(f"Weapon: {item.name}, Attack: {item.attack}, Durability: {item.durability}, Rarity: {item.rarity}")

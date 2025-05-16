@@ -1,7 +1,7 @@
 import random
 
 class BaseWeapon:
-    def __init__(self, attack, armorPen, durability, name, level, rarity, enchant, type):
+    def __init__(self, attack, armorPen, durability, name, level, rarity, enchant, TYPE):
         self.attack = attack
         self.armorPen = armorPen
         self.durability = durability
@@ -9,7 +9,7 @@ class BaseWeapon:
         self.level = level
         self.rarity = rarity
         self.enchanted = enchant
-        self.type = type
+        self.TYPE = TYPE
 
     @classmethod
     def createWeapon(cls): #Make something like this for the armory and items for chests
@@ -43,14 +43,14 @@ class BaseWeapon:
         return weaponRarity()
 
 class BaseArmor:
-    def __init__(self, armor, durability, name, level, rarity, enchant, type):
+    def __init__(self, armor, durability, name, level, rarity, enchant, TYPE):
         self.armor = armor
         self.durability = durability
         self.level = level
         self.name = name
         self.rarity = rarity
         self.enchanted = enchant
-        self.type = type
+        self.TYPE = TYPE
         
     @classmethod
     def createArmor(cls): #Make something like this for the armory and items for chests
