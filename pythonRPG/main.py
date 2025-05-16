@@ -33,6 +33,7 @@ if __name__ == "__main__":
             player = RetreiveSave.player
             env = RetreiveSave.env
             inv = RetreiveSave.inv
+            act = Actions.Actions()
         except Exception as e:
             print(f"Error loading save file: {e}")
             print("Starting a new game...")
