@@ -43,16 +43,6 @@ class Inventory:
                 if item.name == choice:
                     self.equipItem(item)
                     return
-    def getDescription(self):
-        self.showInventory()
-        if len(self.items) == 0:
-            return
-        else:
-            choice = input("What do you want to learn about? ")
-            for item in self.items:
-                if item.name == choice:
-                    self.showDescription(item)
-                    return
     def showDescription(self, item):
         if item in self.items:
             if item.type == "Food" or "Potion" or "Other":

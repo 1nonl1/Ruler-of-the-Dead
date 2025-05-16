@@ -77,7 +77,13 @@ class Player:
         entity.attack = math.ceil(entity.attack + (self.level * math.sin(2)))
         entity.health = math.ceil(entity.health + (self.level * math.cos(1)))
     def itemInfo(self):
-        self.inv.getDescription()
+        if self.inv.items == 0:
+            print("You have nothing in your inventory!")
+        else:
+            self.inv.showInventory()
+            choice = input("What item would you like to get the description of? ")
+            if choice in self.inv.items:
+                self.inv.showDescription(choice)
     def openChest(self):
         self.numOfItems = random.randint(3, 10)
         for i in range(self.numOfItems):
