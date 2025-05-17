@@ -74,8 +74,8 @@ class Player:
     def showInv(self):
         self.inv.showInventory()
     def increaseEntityStats(self, entity):
-        entity.attack = math.ceil(entity.attack + (self.level * math.sin(2)))
-        entity.health = math.ceil(entity.health + (self.level * math.cos(1)))
+        entity.attack = math.ceil(math.exp(self.level) / (self.level + 1))
+        entity.health = math.ceil(math.exp(self.level) / (self.level + 1))
     def itemInfo(self):
         if self.inv.items == 0:
             print("You have nothing in your inventory!")
@@ -179,9 +179,9 @@ class Player:
                     self.battleTurn += 1
                     if random.random() < self.critChance:
                         print("Critical hit!")
-                        damage = max(0, (self.attack * 2) - (enemy.armor - self.armorPen))
+                        damage = math.floor((self.attack * 2) - ((enemy.armor / 100) - ((self.armorPen/100) ** 2)))
                     else:
-                        damage = max(0, self.attack - (enemy.armor - self.armorPen))
+                        damage = math.floor(self.attack - ((enemy.armor / 100) - ((self.armorPen/100) ** 2)))
                     self.totalAttack += damage
                     print(f"You attack the {enemy.name} for {damage} damage!")
                     if enemy.health <= 0:
@@ -195,9 +195,9 @@ class Player:
                         print(f"Enemy health: {enemy.health}")
                         if random.random() < enemy.critChance:
                             print("The enemy lands a critical hit!")
-                            enemy_damage = max(0, (enemy.attack * 2) - (self.armor - enemy.armorPen))
+                            enemy_damage = math.floor((enemy.attack * 2) - ((self.armor / 100) - ((enemy.armorPen/100) ** 2)))
                         else:
-                            enemy_damage = max(0, enemy.attack - (self.armor - enemy.armorPen))
+                            enemy_damage = math.floor(enemy.attack - ((self.armor / 100) - ((enemy.armorPen/100) ** 2)))
                         print(f"The {enemy.name} attacks you for {enemy_damage} damage!")
                         self.health -= enemy_damage
                         print(f"Your health: {self.health}")
