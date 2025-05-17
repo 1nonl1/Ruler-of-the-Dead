@@ -1,4 +1,4 @@
-import Actions, Enviornment, Player, Inventory, os
+import Actions, Environment, Player, Inventory, os
 from Armory import Weapon
 from Items import BaseFood
 import pickle
@@ -6,7 +6,7 @@ import RetreiveSave
 
 def initialize():
     global env, act, player, inv
-    env = Enviornment.Enviornment()
+    env = Environment.Environment()
     act = Actions.Actions()
     player = Player.Player(0, 0, 0, 0, 0, 0, "", 0)
     inv = Inventory.Inventory(player)

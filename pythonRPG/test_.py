@@ -5,7 +5,7 @@ from Inventory import Inventory
 from Armory import BaseWeapon, BaseArmor
 from Entities import BaseEntity
 from Actions import Actions
-from Enviornment import Enviornment
+from Environment import Environment
 from Items import BaseFood, BasePotion, BaseOther
 from Skills import BaseSkill, Skills
 from Upgrade import Upgrade
@@ -112,10 +112,10 @@ class TestEntities(unittest.TestCase):
         entity = BaseEntity.createEntity()
         self.assertIsInstance(entity, BaseEntity)
 
-class TestEnviornment(unittest.TestCase):
+class TestEnvironment(unittest.TestCase):
 
     def setUp(self):
-        self.env = Enviornment()
+        self.env = Environment()
 
     def test_change_weather(self):
         self.env.changeWeather()
@@ -247,7 +247,7 @@ class TestEntities(unittest.TestCase):
     def test_placeholder(self):
         self.assertTrue(True)
 
-class TestEnviornment(unittest.TestCase):
+class TestEnvironment(unittest.TestCase):
     def test_placeholder(self):
         self.assertTrue(True)
 

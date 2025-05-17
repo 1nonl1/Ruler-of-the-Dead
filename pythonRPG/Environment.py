@@ -1,13 +1,20 @@
-import random
-class Enviornment:
+import random, pickle
+from dataDump.floorMaker import BaseFloor
+class Environment:
     def __init__(self):
         self.day = 1
         self.floor = 0
         self.weather = ""
     
+    def getLevel(self):
+        with open('pythonRPG/dataDump/floors.pkl', 'rb') as f:
+            global floors
+            floors = pickle.load(f)
+        print(f"Floor name: {floors[self.floor].name}\tFloor environment: {floors[self.floor].environment}")
     def changeFloor(self, bossKilled, team):
         if bossKilled == False:
-            pass
+            print("Current floor...")
+            self.getLevel()
         elif floor == 1000 and bossKilled == True:
             print("You've come a long way! ")
             print("You've defeated the final boss!")
@@ -25,6 +32,8 @@ class Enviornment:
                 print("`Fjn xed kqd Enide ju kqd Odxo`")
         elif bossKilled == True:
             print(f"You have made it to floor {self.floor}!")
+            print("Some more level information...")
+            self.getLevel()
             floor += 1
     def nextDay(self):
         self.day += 1

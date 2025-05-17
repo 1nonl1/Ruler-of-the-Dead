@@ -1,5 +1,5 @@
 import pickle, os
-import Actions, Enviornment, Player, Inventory
+import Actions, Environment, Player, Inventory
 def getSave():
     try:
         with open('pythonRPG/saveFile.pkl', 'rb') as f:
@@ -10,5 +10,6 @@ def getSave():
     except FileNotFoundError:
         print("File Not Found")
     player.toString()
+
 if __name__ == '__main__':
     getSave()
