@@ -115,4 +115,4 @@ class Inventory:
             if len(items) > 1:  # Only process items with duplicates
                 for i, item in enumerate(items, start=1):
                     item.name = f"{base_name}{i}"
-                    print(f"Renamed item: {item.name}")
+                    print(item.name)
